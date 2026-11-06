@@ -1,0 +1,10 @@
+# Replace this line with type(scope): imperative summary.
+# Examples: chore(lint): enforce JavaScript naming rules
+#           ci(checks): run lint on pull requests
+# Types: feat, fix, docs, refactor, test, chore, ci
+#
+# Leave a blank line after the subject. In the body, explain why the
+# change is needed and list any related changes that help explain it.
+#
+# Validation: list the commands you ran and their results, if relevant.
+# Related issue: Refs #123 or Closes #123, if applicable.
