@@ -1,0 +1,16 @@
+# Local environment and private configuration
+.env
+.env.*
+!.env.example
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+
+# Logs and optional tooling output
+*.log
+node_modules/
+coverage/
