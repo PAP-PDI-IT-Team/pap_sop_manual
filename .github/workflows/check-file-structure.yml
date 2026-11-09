@@ -1,0 +1,44 @@
+name: File Structure
+
+on: pull_request
+
+permissions:
+  contents: read
+
+jobs:
+  file-structure:
+    name: Check File Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check required asset folders
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          pages_root = Path("pages")
+          page_folders = {Path(".")}
+
+          for html_file in pages_root.rglob("*.html"):
+              relative_path = html_file.relative_to(pages_root)
+              if "assets" not in relative_path.parts[:-1]:
+                  page_folders.add(html_file.parent)
+
+          missing = []
+          for page_folder in sorted(page_folders):
+              for folder_name in ("styles", "script"):
+                  folder = page_folder / "assets" / folder_name
+                  if not folder.is_dir():
+                      missing.append(folder)
+
+          if missing:
+              for folder in missing:
+                  print(f"Missing required folder: {folder}/")
+              raise SystemExit(1)
+
+          print("All required asset folders are present.")
+          PY
