@@ -15,3 +15,4 @@ Record meaningful changes here. Date released versions when they are approved.
 ## [1.0.0]
 
 - Added Pull Request checks for changelog versions and site conventions.
+- Grouped related PR checks to share setup and limited the Pages artifact to site files.
