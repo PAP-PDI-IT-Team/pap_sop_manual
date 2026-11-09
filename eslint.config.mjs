@@ -10,7 +10,7 @@ export default [
         },
         {
           selector:
-            ":matches(FunctionDeclaration, FunctionExpression) > Identifier.id",
+            ":matches(FunctionDeclaration, FunctionExpression) > Identifier.id[name=/^.{1,4}$/u]",
           message: "Function names must be at least five characters long.",
         },
       ],

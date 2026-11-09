@@ -11,3 +11,7 @@ Record meaningful changes here. Date released versions when they are approved.
 - README, Code of Conduct, structure sample, security policy, and pending license notice.
 - Pull request and issue templates for repository collaboration.
 - Draft documentation lifecycle SOP, contributor onboarding, AC Local deployment example, and reusable SOP template.
+
+## [1.0.0]
+
+- Added Pull Request checks for changelog versions and site conventions.

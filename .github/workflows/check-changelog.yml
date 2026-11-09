@@ -1,0 +1,57 @@
+name: Changelog
+
+on: pull_request
+
+permissions:
+  contents: read
+
+jobs:
+  changelog:
+    name: Check Changelog
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify changelog version and entry
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          latest_release() {
+            awk '
+              /^##[[:blank:]]+/ {
+                if (found) exit
+                if ($0 ~ /^## \[(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\]/) {
+                  found = 1
+                }
+              }
+              found { print }
+            '
+          }
+
+          base_changelog=$(git show "${BASE_SHA}:CHANGELOG.md")
+          previous_release=$(latest_release <<< "$base_changelog")
+          current_release=$(latest_release < CHANGELOG.md)
+
+          previous=$(sed -nE '1s/^## \[([^]]+)\].*/\1/p' <<< "$previous_release")
+          current=$(sed -nE '1s/^## \[([^]]+)\].*/\1/p' <<< "$current_release")
+
+          if [[ -z "$current" ]] || ! grep -Eq '^[[:blank:]]*[-*][[:blank:]]+[^[:space:]]' <<< "$current_release"; then
+            echo "Add a numbered release heading and a bullet to CHANGELOG.md."
+            exit 1
+          fi
+
+          if [[ -n "$previous" ]]; then
+            highest=$(printf '%s\n' "$previous" "$current" | sort -V | tail -n 1)
+
+            if [[ "$current" == "$previous" || "$current" != "$highest" ]]; then
+              echo "The changelog version must be higher than $previous."
+              exit 1
+            fi
+          fi
+
+          echo "Changelog version $current passed."
