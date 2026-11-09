@@ -1,5 +1,5 @@
-const menu = "Home";
+const HomeMenu = "Home";
 
-function init() {
+function initiate() {
   return menu;
 }
