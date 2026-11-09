@@ -1,0 +1,69 @@
+name: Embedded Code
+
+on: pull_request
+
+permissions:
+  contents: read
+
+jobs:
+  embedded-code:
+    name: Check Embedded Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Reject internal and inline CSS or JavaScript
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import subprocess
+
+
+          class EmbeddedCodeCheck(HTMLParser):
+              def __init__(self, file_path):
+                  super().__init__()
+                  self.file_path = file_path
+                  self.errors = []
+
+              def report(self, message):
+                  line, _ = self.getpos()
+                  self.errors.append(f"{self.file_path}:{line}: {message}")
+
+              def handle_starttag(self, tag, attributes):
+                  attrs = dict(attributes)
+
+                  if tag == "style":
+                      self.report("Move <style> content to an external stylesheet.")
+
+                  if tag == "script" and not (attrs.get("src") or "").strip():
+                      self.report("Use an external script with a src attribute.")
+
+                  for name in attrs:
+                      if name == "style":
+                          self.report("Replace the inline style attribute with a CSS class.")
+                      elif name.startswith("on"):
+                          self.report(f"Move the {name} handler to an external script.")
+
+
+          files = subprocess.check_output(
+              ["git", "ls-files", "-z", "--", "*.html"], encoding="utf-8"
+          )
+          errors = []
+
+          for filename in filter(None, files.split("\0")):
+              file_path = Path(filename)
+              checker = EmbeddedCodeCheck(file_path)
+              checker.feed(file_path.read_text(encoding="utf-8"))
+              checker.close()
+              errors.extend(checker.errors)
+
+          if errors:
+              print("\n".join(errors))
+              raise SystemExit(1)
+
+          print("No embedded CSS or JavaScript found.")
+          PY

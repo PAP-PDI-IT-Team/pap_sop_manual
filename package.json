@@ -1,0 +1,28 @@
+{
+  "name": "pap_sop_manual",
+  "version": "1.0.0",
+  "description": "A simple alignment site for IT standard operating procedures, project scope, and collaboration with other departments. This IT initiative also serves as a project for Senior High School interns from Rizal High.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint **/*.js",
+    "format:check": "prettier --check index.html \"{assets,pages}/**/*.{html,css,js}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PAP-PDI-IT-Team/pap_sop_manual.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PAP-PDI-IT-Team/pap_sop_manual/issues"
+  },
+  "homepage": "https://github.com/PAP-PDI-IT-Team/pap_sop_manual#readme",
+  "devDependencies": {
+    "eslint": "^10.14.0",
+    "prettier": "^3.9.10"
+  }
+}
