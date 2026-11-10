@@ -7,10 +7,12 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint **/*.js",
-    "format:check": "prettier --check index.html \"{assets,pages}/**/*.{html,css,js}\""
-  },
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "lint": "eslint **/*.js",
+  "format:check": "prettier --check index.html \"{assets,pages}/**/*.{html,css,js}\"",
+  "css:build": "tailwindcss -i ./assets/styles/main.css -o ./assets/styles/output.css --minify",
+  "css:watch": "tailwindcss -i ./assets/styles/main.css -o ./assets/styles/output.css --watch"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PAP-PDI-IT-Team/pap_sop_manual.git"
@@ -22,7 +24,9 @@
   },
   "homepage": "https://github.com/PAP-PDI-IT-Team/pap_sop_manual#readme",
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
     "eslint": "^10.14.0",
-    "prettier": "^3.9.10"
+    "prettier": "^3.9.10",
+    "tailwindcss": "^4.3.5"
   }
 }
