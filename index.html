@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System | PAP SOP Manual</title>
+    <link rel="stylesheet" href="../../assets/styles/output.css" />
+    <link rel="stylesheet" href="assets/styles/design-system.css" />
+  </head>
+  <body>
+    <header>
+      <strong>PAP SOP Manual</strong>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-container">
+          <h1>Design System</h1>
+          <p>
+            The approved fonts, colors and components. Use these so pages do not
+            introduce unapproved designs.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-raised">
+        <div class="section-container">
+          <h2>Color Palette</h2>
+          <div class="grid-layout">
+            <div class="card">
+              <div class="h-16 rounded-lg border border-border bg-background"></div>
+              <h3>Background</h3>
+              <code class="font-mono text-xs">--background</code>
+            </div>
+            <div class="card">
+              <div class="h-16 rounded-lg border border-border bg-muted"></div>
+              <h3>Raised Surface</h3>
+              <code class="font-mono text-xs">--muted</code>
+            </div>
+            <div class="card">
+              <div class="h-16 rounded-lg bg-primary"></div>
+              <h3>Brand Accent</h3>
+              <code class="font-mono text-xs">--primary</code>
+            </div>
+            <div class="card">
+              <div class="h-16 rounded-lg border border-border bg-secondary"></div>
+              <h3>Base 1</h3>
+              <code class="font-mono text-xs">--secondary</code>
+            </div>
+            <div class="card">
+              <div class="h-16 rounded-lg border border-border bg-accent"></div>
+              <h3>Base 2</h3>
+              <code class="font-mono text-xs">--accent</code>
+            </div>
+            <div class="card">
+              <div class="h-16 rounded-lg bg-success"></div>
+              <h3>Success</h3>
+              <code class="font-mono text-xs">--success</code>
+            </div>
+            <div class="card">
+              <div class="h-16 rounded-lg bg-warning"></div>
+              <h3>Warning</h3>
+              <code class="font-mono text-xs">--warning</code>
+            </div>
+            <div class="card">
+              <div class="h-16 rounded-lg bg-info"></div>
+              <h3>Info</h3>
+              <code class="font-mono text-xs">--info</code>
+            </div>
+            <div class="card">
+              <div class="h-16 rounded-lg bg-destructive"></div>
+              <h3>Destruction</h3>
+              <code class="font-mono text-xs">--destructive</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-container">
+          <h2>Typography</h2>
+          <div class="card">
+            <h1>Heading 1 - 36px Bold</h1>
+            <h2>Heading 2 - 24px SemiBold</h2>
+            <h3>Heading 3 - 18px Medium</h3>
+            <p>Body - 14px Regular. Used for paragraphs and descriptions.</p>
+            <p class="text-muted-sm">Muted - 12px. Used for captions and hints.</p>
+            <code class="font-mono text-xs">Code - 12px monospace</code>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-raised">
+        <div class="section-container">
+          <h2>Buttons</h2>
+          <p>
+            Primary is the main action and is used only once per button group.
+            Secondary is optional. Tertiary is for conditional or niche actions.
+          </p>
+          <div class="grid-layout">
+            <div class="card">
+              <h3>Primary</h3>
+              <div class="flex flex-wrap gap-3">
+                <button class="btn btn-primary">Full BG</button>
+                <button class="btn btn-primary btn-border">Border</button>
+                <button class="btn btn-primary" disabled>Disabled</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Secondary</h3>
+              <div class="flex flex-wrap gap-3">
+                <button class="btn btn-secondary">Full BG</button>
+                <button class="btn btn-secondary btn-border">Border</button>
+                <button class="btn btn-secondary" disabled>Disabled</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Tertiary</h3>
+              <div class="flex flex-wrap gap-3">
+                <button class="btn btn-tertiary">Full BG</button>
+                <button class="btn btn-tertiary btn-border">Border</button>
+                <button class="btn btn-tertiary" disabled>Disabled</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Correct group usage</h3>
+              <div class="flex flex-wrap gap-3">
+                <button class="btn btn-primary">Save</button>
+                <button class="btn btn-secondary">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-container">
+          <h2>Link</h2>
+          <p>Body text with a <a class="link-style" href="#">standard link</a>.</p>
+
+          <h2>Status Badges</h2>
+          <div class="flex flex-wrap gap-3">
+            <span class="badge badge-success">Approved</span>
+            <span class="badge badge-warning">Pending</span>
+            <span class="badge badge-info">In Review</span>
+            <span class="badge badge-destruction">Rejected</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <a href="../../index.html">Home</a>
+        <a href="index.html">Design System</a>
+      </nav>
+    </footer>
+  </body>
+</html>
