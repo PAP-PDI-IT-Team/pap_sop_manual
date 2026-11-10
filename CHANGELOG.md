@@ -12,7 +12,7 @@ Record meaningful changes here. Date released versions when they are approved.
 - Pull request and issue templates for repository collaboration.
 - Draft documentation lifecycle SOP, contributor onboarding, AC Local deployment example, and reusable SOP template.
 
-## [1.0.0]
+## [1.0.1]
 
 - Added Pull Request checks for changelog versions and site conventions.
 - Grouped related PR checks to share setup and limited the Pages artifact to site files.
