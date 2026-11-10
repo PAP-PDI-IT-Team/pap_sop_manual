@@ -5,17 +5,17 @@
   /* Core Canvas */
   --background: oklch(1 0 0);
   --foreground: oklch(0.148 0.004 228.8);
-  
+
   /* Raised Surfaces & Cards */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.148 0.004 228.8);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.148 0.004 228.8);
-  
+
   /* Brand Accent Settings (Deep Blue Tint from Wireframe) */
   --primary: oklch(0.52 0.105 223.128);
   --primary-foreground: oklch(0.984 0.019 200.873);
-  
+
   /* Muted Elements & Alternating Containers */
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -23,7 +23,7 @@
   --muted-foreground: oklch(0.56 0.021 213.5);
   --accent: oklch(0.963 0.002 197.1);
   --accent-foreground: oklch(0.218 0.008 223.9);
-  
+
   /* Semantic Badges & Feedback States */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.019 200.873);
@@ -39,14 +39,14 @@
   --input: oklch(0.925 0.005 214.3);
   --ring: oklch(0.723 0.014 214.4);
   --radius: 0.625rem;
-  
+
   /* Dynamics Chart Gradient Tokens */
   --chart-1: oklch(0.865 0.127 207.078);
   --chart-2: oklch(0.715 0.143 215.221);
   --chart-3: oklch(0.609 0.126 221.723);
   --chart-4: oklch(0.52 0.105 223.128);
   --chart-5: oklch(0.45 0.085 224.283);
-  
+
   /* Navigation Component Layouts */
   --sidebar: oklch(0.987 0.002 197.1);
   --sidebar-foreground: oklch(0.148 0.004 228.8);
@@ -62,17 +62,17 @@
   /* Core Canvas */
   --background: oklch(0.148 0.004 228.8);
   --foreground: oklch(0.987 0.002 197.1);
-  
+
   /* Raised Surfaces & Cards */
   --card: oklch(0.218 0.008 223.9);
   --card-foreground: oklch(0.987 0.002 197.1);
   --popover: oklch(0.218 0.008 223.9);
   --popover-foreground: oklch(0.987 0.002 197.1);
-  
+
   /* Brand Accent Settings */
   --primary: oklch(0.45 0.085 224.283);
   --primary-foreground: oklch(0.984 0.019 200.873);
-  
+
   /* Muted Elements & Alternating Containers */
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
@@ -80,29 +80,29 @@
   --muted-foreground: oklch(0.723 0.014 214.4);
   --accent: oklch(0.275 0.011 216.9);
   --accent-foreground: oklch(0.987 0.002 197.1);
-  
+
   /* Semantic Badges & Feedback States */
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.987 0.002 197.1);
-  --success: oklch(0.45 0.15 144.0);
+  --success: oklch(0.45 0.15 144);
   --success-foreground: oklch(0.987 0.002 197.1);
-  --warning: oklch(0.55 0.12 81.0);
+  --warning: oklch(0.55 0.12 81);
   --warning-foreground: oklch(0.987 0.002 197.1);
-  --info: oklch(0.50 0.11 209.0);
+  --info: oklch(0.5 0.11 209);
   --info-foreground: oklch(0.987 0.002 197.1);
 
   /* Form Elements & Inputs */
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.56 0.021 213.5);
-  
+
   /* Dynamics Chart Gradient Tokens */
   --chart-1: oklch(0.865 0.127 207.078);
   --chart-2: oklch(0.715 0.143 215.221);
   --chart-3: oklch(0.609 0.126 221.723);
   --chart-4: oklch(0.52 0.105 223.128);
   --chart-5: oklch(0.45 0.085 224.283);
-  
+
   /* Navigation Component Layouts */
   --sidebar: oklch(0.218 0.008 223.9);
   --sidebar-foreground: oklch(0.987 0.002 197.1);
@@ -177,7 +177,10 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
@@ -190,7 +193,9 @@ body {
 }
 
 .section-raised {
-  background-color: var(--muted); /* For alternating backgrounds like 'Dynamics' */
+  background-color: var(
+    --muted
+  ); /* For alternating backgrounds like 'Dynamics' */
 }
 
 .grid-layout {
@@ -200,34 +205,41 @@ body {
   margin-top: 2rem;
 }
 
-h1, h2, h3, .text-header {
+h1,
+h2,
+h3,
+.text-header {
   color: var(--foreground);
   line-height: 1.2;
 }
 
 /* --- H1 / 36px / Bold --- */
-h1, .text-h1 { 
-  font-size: 2.25rem; 
-  font-weight: 700; 
-  margin-bottom: 1rem; 
+h1,
+.text-h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 /* --- H2 / 24px / SemiBold --- */
-h2, .text-h2 { 
-  font-size: 1.5rem; 
-  font-weight: 600; 
-  margin-bottom: 1.5rem; 
+h2,
+.text-h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
 /* --- H3 / 18px / Medium --- */
-h3, .text-h3 { 
-  font-size: 1.125rem; 
-  font-weight: 500; 
-  margin-bottom: 0.5rem; 
+h3,
+.text-h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 /* --- Body / 14px / Regular --- */
-p, .text-body {
+p,
+.text-body {
   color: var(--muted-foreground);
   font-size: 0.875rem;
   font-weight: 400;
@@ -259,7 +271,7 @@ p, .text-body {
   font-size: 0.875rem;
   font-weight: 600;
   padding: 0.6rem 1.2rem;
-  border-radius: var(--radius); 
+  border-radius: var(--radius);
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -298,7 +310,8 @@ p, .text-body {
 }
 
 /* Disabled Variation Override Parameter */
-.btn:disabled, .btn-disabled {
+.btn:disabled,
+.btn-disabled {
   background-color: var(--muted) !important;
   color: var(--muted-foreground) !important;
   border-color: transparent !important;
@@ -328,10 +341,22 @@ p, .text-body {
   letter-spacing: 0.05em;
   width: fit-content;
 }
-.badge-success { background-color: var(--success); color: var(--success-foreground); }
-.badge-warning { background-color: var(--warning); color: var(--warning-foreground); }
-.badge-info { background-color: var(--info); color: var(--info-foreground); }
-.badge-destruction { background-color: var(--destructive); color: var(--destructive-foreground); }
+.badge-success {
+  background-color: var(--success);
+  color: var(--success-foreground);
+}
+.badge-warning {
+  background-color: var(--warning);
+  color: var(--warning-foreground);
+}
+.badge-info {
+  background-color: var(--info);
+  color: var(--info-foreground);
+}
+.badge-destruction {
+  background-color: var(--destructive);
+  color: var(--destructive-foreground);
+}
 
 /* --- Card Elements Structures --- */
 .card {
