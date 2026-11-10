@@ -12,6 +12,15 @@ Record meaningful changes here. Date released versions when they are approved.
 - Pull request and issue templates for repository collaboration.
 - Draft documentation lifecycle SOP, contributor onboarding, AC Local deployment example, and reusable SOP template.
 
+## [1.0.1]
+
+- Introduced centralized design tokens for colors, typography, borders, and surfaces.
+- Added light and dark theme variables.
+- Added reusable button, badge, card, and link styles.
+- Added Tailwind CSS v4 build configuration.
+- Standardized typography and component styling.
+- Improved the maintainability of shared design resources.
+
 ## [1.0.0]
 
 - Added Pull Request checks for changelog versions and site conventions.
