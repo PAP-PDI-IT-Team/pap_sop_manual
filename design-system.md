@@ -38,25 +38,25 @@ Colors are CSS variables in `:root`. The `.dark` class overrides them, so dark m
 
 | Role | Token | Tailwind color | Light | Dark |
 | --- | --- | --- | --- | --- |
-| Background | `--background` | `background` | `oklch(1 0 0)` | `oklch(0.148 0.004 228.8)` |
-| Text | `--foreground` | `foreground` | `oklch(0.148 0.004 228.8)` | `oklch(0.987 0.002 197.1)` |
-| Card | `--card` | `card` | `oklch(1 0 0)` | `oklch(0.218 0.008 223.9)` |
-| Card text | `--card-foreground` | `card-foreground` | `oklch(0.148 0.004 228.8)` | `oklch(0.987 0.002 197.1)` |
-| Popover | `--popover` | `popover` | `oklch(1 0 0)` | `oklch(0.218 0.008 223.9)` |
-| Popover text | `--popover-foreground` | `popover-foreground` | `oklch(0.148 0.004 228.8)` | `oklch(0.987 0.002 197.1)` |
+| Background | `--background` | `background` | `oklch(1 0 0)` | `oklch(0.254 0.023 259.3)` |
+| Text | `--foreground` | `foreground` | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| Card | `--card` | `card` | `oklch(1 0 0)` | `oklch(0.299 0.027 257.5)` |
+| Card text | `--card-foreground` | `card-foreground` | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| Popover | `--popover` | `popover` | `oklch(1 0 0)` | `oklch(0.299 0.027 257.5)` |
+| Popover text | `--popover-foreground` | `popover-foreground` | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
 
 ### Brand and base colors
 
 | Role | Token | Tailwind color | Light | Dark |
 | --- | --- | --- | --- | --- |
-| Brand accent | `--primary` | `primary` | `oklch(0.52 0.105 223.128)` | `oklch(0.45 0.085 224.283)` |
-| On brand accent | `--primary-foreground` | `primary-foreground` | `oklch(0.984 0.019 200.873)` | `oklch(0.984 0.019 200.873)` |
-| Base 1 | `--secondary` | `secondary` | `oklch(0.967 0.001 286.375)` | `oklch(0.274 0.006 286.033)` |
-| On base 1 | `--secondary-foreground` | `secondary-foreground` | `oklch(0.21 0.006 285.885)` | `oklch(0.985 0 0)` |
-| Raised surface | `--muted` | `muted` | `oklch(0.963 0.002 197.1)` | `oklch(0.275 0.011 216.9)` |
-| Muted text | `--muted-foreground` | `muted-foreground` | `oklch(0.56 0.021 213.5)` | `oklch(0.723 0.014 214.4)` |
-| Base 2 | `--accent` | `accent` | `oklch(0.963 0.002 197.1)` | `oklch(0.275 0.011 216.9)` |
-| On base 2 | `--accent-foreground` | `accent-foreground` | `oklch(0.218 0.008 223.9)` | `oklch(0.987 0.002 197.1)` |
+| Brand accent | `--primary` | `primary` | `oklch(0.536 0.102 249.5)` | `oklch(0.536 0.102 249.5)` |
+| On brand accent | `--primary-foreground` | `primary-foreground` | `oklch(0.977 0.007 247.9)` | `oklch(0.977 0.007 247.9)` |
+| Base 1 | `--secondary` | `secondary` | `oklch(0.886 0.014 258.3)` | `oklch(0.357 0.033 259)` |
+| On base 1 | `--secondary-foreground` | `secondary-foreground` | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| Raised surface | `--muted` | `muted` | `oklch(0.956 0.007 247.9)` | `oklch(0.326 0.03 258.3)` |
+| Muted text | `--muted-foreground` | `muted-foreground` | `oklch(0.52 0.039 257.9)` | `oklch(0.725 0.033 258.9)` |
+| Base 2 | `--accent` | `accent` | `oklch(0.956 0.007 247.9)` | `oklch(0.326 0.03 258.3)` |
+| On base 2 | `--accent-foreground` | `accent-foreground` | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
 
 ### Status colors
 
@@ -75,9 +75,9 @@ Colors are CSS variables in `:root`. The `.dark` class overrides them, so dark m
 
 | Role | Token | Light | Dark |
 | --- | --- | --- | --- |
-| Border | `--border` | `oklch(0.925 0.005 214.3)` | `oklch(1 0 0 / 10%)` |
-| Input border | `--input` | `oklch(0.925 0.005 214.3)` | `oklch(1 0 0 / 15%)` |
-| Focus ring | `--ring` | `oklch(0.723 0.014 214.4)` | `oklch(0.56 0.021 213.5)` |
+| Border | `--border` | `oklch(0.919 0.012 252.1)` | `oklch(1 0 0 / 10%)` |
+| Input border | `--input` | `oklch(0.864 0.018 256.3)` | `oklch(1 0 0 / 15%)` |
+| Focus ring | `--ring` | `oklch(0.682 0.037 257.9)` | `oklch(0.558 0.039 257.9)` |
 | Corner radius | `--radius` | `0.625rem` | `0.625rem` |
 
 ### Chart colors
@@ -86,24 +86,24 @@ The same five values are used in light and dark mode, from lightest to darkest.
 
 | Token | Value |
 | --- | --- |
-| `--chart-1` | `oklch(0.865 0.127 207.078)` |
-| `--chart-2` | `oklch(0.715 0.143 215.221)` |
-| `--chart-3` | `oklch(0.609 0.126 221.723)` |
-| `--chart-4` | `oklch(0.52 0.105 223.128)` |
-| `--chart-5` | `oklch(0.45 0.085 224.283)` |
+| `--chart-1` | `oklch(0.863 0.021 254.9)` |
+| `--chart-2` | `oklch(0.719 0.031 259.6)` |
+| `--chart-3` | `oklch(0.593 0.043 259.3)` |
+| `--chart-4` | `oklch(0.52 0.043 258.4)` |
+| `--chart-5` | `oklch(0.442 0.038 257.3)` |
 
 ### Navigation and footer colors
 
 | Token | Light | Dark |
 | --- | --- | --- |
-| `--sidebar` | `oklch(0.987 0.002 197.1)` | `oklch(0.218 0.008 223.9)` |
-| `--sidebar-foreground` | `oklch(0.148 0.004 228.8)` | `oklch(0.987 0.002 197.1)` |
-| `--sidebar-primary` | `oklch(0.609 0.126 221.723)` | `oklch(0.715 0.143 215.221)` |
-| `--sidebar-primary-foreground` | `oklch(0.984 0.019 200.873)` | `oklch(0.302 0.056 229.695)` |
-| `--sidebar-accent` | `oklch(0.963 0.002 197.1)` | `oklch(0.275 0.011 216.9)` |
-| `--sidebar-accent-foreground` | `oklch(0.218 0.008 223.9)` | `oklch(0.987 0.002 197.1)` |
-| `--sidebar-border` | `oklch(0.925 0.005 214.3)` | `oklch(1 0 0 / 10%)` |
-| `--sidebar-ring` | `oklch(0.723 0.014 214.4)` | `oklch(0.56 0.021 213.5)` |
+| `--sidebar` | `oklch(1 0 0)` | `oklch(0.299 0.027 257.5)` |
+| `--sidebar-foreground` | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| `--sidebar-primary` | `oklch(0.536 0.102 249.5)` | `oklch(0.718 0.083 248)` |
+| `--sidebar-primary-foreground` | `oklch(0.977 0.007 247.9)` | `oklch(0.254 0.023 259.3)` |
+| `--sidebar-accent` | `oklch(0.956 0.007 247.9)` | `oklch(0.326 0.03 258.3)` |
+| `--sidebar-accent-foreground` | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| `--sidebar-border` | `oklch(0.919 0.012 252.1)` | `oklch(1 0 0 / 10%)` |
+| `--sidebar-ring` | `oklch(0.682 0.037 257.9)` | `oklch(0.558 0.039 257.9)` |
 
 ### Radius scale
 
@@ -156,13 +156,13 @@ Base class: `.btn`. Inline flex, centered, 14px, SemiBold, padding 0.6rem 1.2rem
 
 | Combination | Background | Text | Border |
 | --- | --- | --- | --- |
-| Primary, full | `--primary` | `--primary-foreground` | Transparent |
-| Primary, border | Transparent | `--primary` | `--primary` |
-| Secondary, full | `--secondary` | `--secondary-foreground` | `--border` |
-| Secondary, border | Transparent | `--foreground` | `--border` |
-| Tertiary, full | Transparent | `--foreground` | Transparent |
-| Tertiary, border | Transparent | `--foreground` | `--border` |
-| Disabled (any role) | `--muted` | `--muted-foreground` | Transparent, 60% opacity, `not-allowed` cursor |
+| Primary, full | `--primary` | `oklch(0.536 0.102 249.5)` | `oklch(0.536 0.102 249.5)` |
+| Primary, border | Transparent | `oklch(0.536 0.102 249.5)` | `oklch(0.536 0.102 249.5)` |
+| Secondary, full | `--secondary` | `oklch(0.886 0.014 258.3)` | `oklch(0.357 0.033 259)` |
+| Secondary, border | Transparent | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| Tertiary, full | Transparent | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| Tertiary, border | Transparent | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| Disabled (any role) | `--muted` | `oklch(0.956 0.007 247.9)` | `oklch(0.326 0.03 258.3)` |
 
 A correct group has one primary and optionally a secondary, for example Save and Cancel.
 
@@ -188,9 +188,9 @@ Base class: `.badge`. Pill-shaped (fully rounded), 12px, SemiBold, uppercase, le
 | Class | Purpose |
 | --- | --- |
 | `.section-container` | Centered content block, max width 1200px, padding 5rem 2rem |
-| `.section-raised` | Raised section background (`--muted`) for alternating bands |
+| `oklch(0.956 0.007 247.9)` | `oklch(0.326 0.03 258.3)` |
 | `.grid-layout` | Responsive grid, columns at least 250px wide, gap 2rem, top margin 2rem |
-| `.card` | Content block with `--card` background, 1px border, `--radius` corners, 1.5rem padding |
+| `oklch(1 0 0)` | `oklch(0.299 0.027 257.5)` |
 | `.chart-box` | Simulated chart container, 180px tall, bars align to the bottom |
 | `.chart-column` | A bar inside `.chart-box`, full width, 7.5px rounded top corners |
 
@@ -202,16 +202,18 @@ Base page styles: the body uses `--background` and `--foreground`, no margin or 
 
 | Element | Style |
 | --- | --- |
-| `header` | Flex row, space between, centered vertically, padding 1.5rem 2rem, bottom border, `--background` |
-| `footer` | `--sidebar` background, `--sidebar-foreground` text, top border (`--sidebar-border`), padding 4rem 2rem |
-| `footer a` | `--sidebar-primary` color |
+| `oklch(1 0 0)` | `oklch(0.254 0.023 259.3)` |
+| `oklch(1 0 0)` | `oklch(0.299 0.027 257.5)` |
+| `oklch(0.536 0.102 249.5)` | `oklch(0.718 0.083 248)` |
 
 - The header shows the site name only. It has no navigation.
 - Navigation links go in the footer only.
 
 ## Using Tailwind utilities
 
-Tailwind generates only the utilities it finds in the HTML. Any utility works as soon as it appears in a page's HTML and the CSS is rebuilt. Colors use the names in the palette tables, for example `bg-primary`, `bg-success`, `text-muted-foreground`, and `border-border`.
+Tailwind generates only the utilities it finds in the HTML. Any utility works as soon as it appears in a page's HTML and the CSS is rebuilt.
+
+The component classes in `main.css` are not inside a Tailwind layer, so they win over plain utilities. When a utility has to override a component class, add the important suffix, for example `mb-0!` over `.text-h3` or `text-foreground!` over `p`. Colors use the names in the palette tables, for example `bg-primary`, `bg-success`, `text-muted-foreground`, and `border-border`.
 
 ## Adding a new page
 
