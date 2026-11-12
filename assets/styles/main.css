@@ -400,8 +400,9 @@ footer {
   background-color: var(--sidebar);
   color: var(--sidebar-foreground);
   border-top: 1px solid var(--sidebar-border);
-  padding: 4rem 2rem;
+  padding: 1.5rem 2rem;
 }
+
 footer a {
   color: var(--sidebar-primary);
 }
