@@ -12,6 +12,15 @@ Record meaningful changes here. Date released versions when they are approved.
 - Pull request and issue templates for repository collaboration.
 - Draft documentation lifecycle SOP, contributor onboarding, AC Local deployment example, and reusable SOP template.
 
+## [1.0.2]
+
+- Added the IT SOP Manual landing page with a skip link, hero, resource cards, Specification section, and Contributors section.
+- Added shared header and footer navigation with placeholder links for pages still to come.
+- Updated color tokens to a slate-blue palette for light and dark themes.
+- Added shared hover, keyboard focus, and reduced-motion styles for links, buttons, and cards.
+- Reduced footer padding for a more compact footer.
+- Updated the design system documentation to match the new tokens, navigation, and interactions.
+
 ## [1.0.1]
 
 - Introduced centralized design tokens for colors, typography, borders, and surfaces.
