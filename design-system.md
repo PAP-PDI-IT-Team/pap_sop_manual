@@ -36,76 +36,86 @@ Because `output.css` is committed, rebuild it with `npm run css:build` before co
 
 Colors are CSS variables in `:root`. The `.dark` class overrides them, so dark mode turns on when `dark` is set on `<html>`. Each color has a Tailwind utility through the `@theme inline` mapping, for example `bg-primary`, `text-muted-foreground`, and `border-border`.
 
+### Brand tokens
+
+The blue, cyan, and navy that the other colors build on. Use them through the tokens in the tables below, not directly.
+
+| Token          | Light     | Dark      | Used for                                           |
+| -------------- | --------- | --------- | -------------------------------------------------- |
+| `--brand-blue` | `#0876e8` | `#258dff` | Brand accent, links, info                          |
+| `--brand-cyan` | `#35c9ff` | `#43d4ff` | Focus ring, `--chart-2`, footer links in dark mode |
+| `--brand-navy` | `#07192b` | `#061421` | Dark bands and `--chart-5`                         |
+
 ### Core and surfaces
 
-| Role         | Token                  | Tailwind color       | Light                      | Dark                       |
-| ------------ | ---------------------- | -------------------- | -------------------------- | -------------------------- |
-| Background   | `--background`         | `background`         | `oklch(1 0 0)`             | `oklch(0.254 0.023 259.3)` |
-| Text         | `--foreground`         | `foreground`         | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
-| Card         | `--card`               | `card`               | `oklch(1 0 0)`             | `oklch(0.299 0.027 257.5)` |
-| Card text    | `--card-foreground`    | `card-foreground`    | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
-| Popover      | `--popover`            | `popover`            | `oklch(1 0 0)`             | `oklch(0.299 0.027 257.5)` |
-| Popover text | `--popover-foreground` | `popover-foreground` | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| Role         | Token                  | Tailwind color       | Light     | Dark      |
+| ------------ | ---------------------- | -------------------- | --------- | --------- |
+| Background   | `--background`         | `background`         | `#f7fbff` | `#071a2b` |
+| Text         | `--foreground`         | `foreground`         | `#0b1c2d` | `#eff8ff` |
+| Card         | `--card`               | `card`               | `#ffffff` | `#10283d` |
+| Card text    | `--card-foreground`    | `card-foreground`    | `#0b1c2d` | `#eff8ff` |
+| Popover      | `--popover`            | `popover`            | `#ffffff` | `#10283d` |
+| Popover text | `--popover-foreground` | `popover-foreground` | `#0b1c2d` | `#eff8ff` |
 
 ### Brand and base colors
 
-| Role            | Token                    | Tailwind color         | Light                      | Dark                       |
-| --------------- | ------------------------ | ---------------------- | -------------------------- | -------------------------- |
-| Brand accent    | `--primary`              | `primary`              | `oklch(0.536 0.102 249.5)` | `oklch(0.536 0.102 249.5)` |
-| On brand accent | `--primary-foreground`   | `primary-foreground`   | `oklch(0.977 0.007 247.9)` | `oklch(0.977 0.007 247.9)` |
-| Base 1          | `--secondary`            | `secondary`            | `oklch(0.886 0.014 258.3)` | `oklch(0.357 0.033 259)`   |
-| On base 1       | `--secondary-foreground` | `secondary-foreground` | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
-| Raised surface  | `--muted`                | `muted`                | `oklch(0.956 0.007 247.9)` | `oklch(0.326 0.03 258.3)`  |
-| Muted text      | `--muted-foreground`     | `muted-foreground`     | `oklch(0.52 0.039 257.9)`  | `oklch(0.725 0.033 258.9)` |
-| Base 2          | `--accent`               | `accent`               | `oklch(0.956 0.007 247.9)` | `oklch(0.326 0.03 258.3)`  |
-| On base 2       | `--accent-foreground`    | `accent-foreground`    | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
+| Role            | Token                    | Tailwind color         | Light     | Dark      |
+| --------------- | ------------------------ | ---------------------- | --------- | --------- |
+| Brand accent    | `--primary`              | `primary`              | `#0876e8` | `#258dff` |
+| On brand accent | `--primary-foreground`   | `primary-foreground`   | `#ffffff` | `#ffffff` |
+| Base 1          | `--secondary`            | `secondary`            | `#e5f2ff` | `#15354f` |
+| On base 1       | `--secondary-foreground` | `secondary-foreground` | `#082c4d` | `#eff8ff` |
+| Raised surface  | `--muted`                | `muted`                | `#eef6fd` | `#102b42` |
+| Muted text      | `--muted-foreground`     | `muted-foreground`     | `#4b6176` | `#b7cde0` |
+| Base 2          | `--accent`               | `accent`               | `#d8f3ff` | `#164363` |
+| On base 2       | `--accent-foreground`    | `accent-foreground`    | `#063455` | `#eff8ff` |
 
 ### Status colors
 
 | Role           | Token                      | Light                        | Dark                        |
 | -------------- | -------------------------- | ---------------------------- | --------------------------- |
-| Success        | `--success`                | `oklch(0.628 0.184 144.548)` | `oklch(0.45 0.15 144.0)`    |
+| Success        | `--success`                | `oklch(0.628 0.184 144.548)` | `oklch(0.45 0.15 144)`      |
 | On success     | `--success-foreground`     | `oklch(0.984 0.019 144.548)` | `oklch(0.987 0.002 197.1)`  |
-| Warning        | `--warning`                | `oklch(0.795 0.163 81.312)`  | `oklch(0.55 0.12 81.0)`     |
+| Warning        | `--warning`                | `oklch(0.795 0.163 81.312)`  | `oklch(0.55 0.12 81)`       |
 | On warning     | `--warning-foreground`     | `oklch(0.25 0.05 81.312)`    | `oklch(0.987 0.002 197.1)`  |
-| Info           | `--info`                   | `oklch(0.674 0.129 209.317)` | `oklch(0.50 0.11 209.0)`    |
-| On info        | `--info-foreground`        | `oklch(0.984 0.019 209.317)` | `oklch(0.987 0.002 197.1)`  |
+| Info           | `--info`                   | `#0876e8`                    | `#43d4ff`                   |
+| On info        | `--info-foreground`        | `#ffffff`                    | `#06243a`                   |
 | Destruction    | `--destructive`            | `oklch(0.577 0.245 27.325)`  | `oklch(0.704 0.191 22.216)` |
 | On destruction | `--destructive-foreground` | `oklch(0.984 0.019 200.873)` | `oklch(0.987 0.002 197.1)`  |
 
 ### Form elements
 
-| Role          | Token      | Light                      | Dark                       |
-| ------------- | ---------- | -------------------------- | -------------------------- |
-| Border        | `--border` | `oklch(0.919 0.012 252.1)` | `oklch(1 0 0 / 10%)`       |
-| Input border  | `--input`  | `oklch(0.864 0.018 256.3)` | `oklch(1 0 0 / 15%)`       |
-| Focus ring    | `--ring`   | `oklch(0.682 0.037 257.9)` | `oklch(0.558 0.039 257.9)` |
-| Corner radius | `--radius` | `0.625rem`                 | `0.625rem`                 |
+| Role          | Token      | Light     | Dark      |
+| ------------- | ---------- | --------- | --------- |
+| Border        | `--border` | `#d3e2ef` | `#25445c` |
+| Input border  | `--input`  | `#bfd4e4` | `#31536c` |
+| Focus ring    | `--ring`   | `#35c9ff` | `#43d4ff` |
+| Corner radius | `--radius` | `0.75rem` | `0.75rem` |
 
 ### Chart colors
 
-The same five values are used in light and dark mode, from lightest to darkest.
+Five steps, from lightest to darkest. `--chart-2` and `--chart-5` follow the brand cyan and navy.
 
-| Token       | Value                      |
-| ----------- | -------------------------- |
-| `--chart-1` | `oklch(0.863 0.021 254.9)` |
-| `--chart-2` | `oklch(0.719 0.031 259.6)` |
-| `--chart-3` | `oklch(0.593 0.043 259.3)` |
-| `--chart-4` | `oklch(0.52 0.043 258.4)`  |
-| `--chart-5` | `oklch(0.442 0.038 257.3)` |
+| Token       | Light     | Dark      |
+| ----------- | --------- | --------- |
+| `--chart-1` | `#c5efff` | `#c5efff` |
+| `--chart-2` | `#35c9ff` | `#43d4ff` |
+| `--chart-3` | `#1285ed` | `#258dff` |
+| `--chart-4` | `#0a5db7` | `#0a5db7` |
+| `--chart-5` | `#07192b` | `#071a2b` |
 
 ### Navigation and footer colors
 
-| Token                          | Light                      | Dark                       |
-| ------------------------------ | -------------------------- | -------------------------- |
-| `--sidebar`                    | `oklch(1 0 0)`             | `oklch(0.299 0.027 257.5)` |
-| `--sidebar-foreground`         | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
-| `--sidebar-primary`            | `oklch(0.536 0.102 249.5)` | `oklch(0.718 0.083 248)`   |
-| `--sidebar-primary-foreground` | `oklch(0.977 0.007 247.9)` | `oklch(0.254 0.023 259.3)` |
-| `--sidebar-accent`             | `oklch(0.956 0.007 247.9)` | `oklch(0.326 0.03 258.3)`  |
-| `--sidebar-accent-foreground`  | `oklch(0.391 0.034 258.3)` | `oklch(0.956 0.007 247.9)` |
-| `--sidebar-border`             | `oklch(0.919 0.012 252.1)` | `oklch(1 0 0 / 10%)`       |
-| `--sidebar-ring`               | `oklch(0.682 0.037 257.9)` | `oklch(0.558 0.039 257.9)` |
+| Token                          | Light     | Dark      |
+| ------------------------------ | --------- | --------- |
+| `--sidebar`                    | `#ffffff` | `#10283d` |
+| `--sidebar-foreground`         | `#0b1c2d` | `#eff8ff` |
+| `--sidebar-primary`            | `#0876e8` | `#43d4ff` |
+| `--sidebar-primary-foreground` | `#ffffff` | `#06243a` |
+| `--sidebar-accent`             | `#d8f3ff` | `#164363` |
+| `--sidebar-accent-foreground`  | `#063455` | `#eff8ff` |
+| `--sidebar-border`             | `#d3e2ef` | `#25445c` |
+| `--sidebar-ring`               | `#35c9ff` | `#43d4ff` |
 
 ### Radius scale
 
@@ -136,7 +146,7 @@ Tailwind resets headings to inherit their size and weight, then `main.css` sets 
 
 ## Buttons
 
-Base class: `.btn`. Inline flex, centered, 14px, SemiBold, padding 0.6rem 1.2rem, 1px transparent border, `--radius` corners, 0.15s transition.
+Base class: `.btn`. Inline flex, centered, 14px, SemiBold, padding 0.6rem 1.2rem, 1px transparent border, `--radius` corners, 0.15s transition. On phones the minimum height is 2.75rem (44px).
 
 ### Roles
 
@@ -156,15 +166,15 @@ Base class: `.btn`. Inline flex, centered, 14px, SemiBold, padding 0.6rem 1.2rem
 
 ### What each combination looks like
 
-| Combination         | Background    | Text                     | Border                                         |
-| ------------------- | ------------- | ------------------------ | ---------------------------------------------- |
-| Primary, full       | `--primary`   | `--primary-foreground`   | Transparent                                    |
-| Primary, border     | Transparent   | `--primary`              | `--primary`                                    |
-| Secondary, full     | `--secondary` | `--secondary-foreground` | `--border`                                     |
-| Secondary, border   | Transparent   | `--foreground`           | `--border`                                     |
-| Tertiary, full      | Transparent   | `--foreground`           | Transparent                                    |
-| Tertiary, border    | Transparent   | `--foreground`           | `--border`                                     |
-| Disabled (any role) | `--muted`     | `--muted-foreground`     | Transparent, 60% opacity, `not-allowed` cursor |
+| Combination         | Background                            | Text                     | Border                                         |
+| ------------------- | ------------------------------------- | ------------------------ | ---------------------------------------------- |
+| Primary, full       | `--primary`, shading to a darker blue | `--primary-foreground`   | Transparent                                    |
+| Primary, border     | Transparent                           | `--primary`              | `--primary`                                    |
+| Secondary, full     | `--secondary`                         | `--secondary-foreground` | `--border`                                     |
+| Secondary, border   | Transparent                           | `--foreground`           | `--border`                                     |
+| Tertiary, full      | Transparent                           | `--foreground`           | Transparent                                    |
+| Tertiary, border    | Transparent                           | `--foreground`           | `--border`                                     |
+| Disabled (any role) | `--muted`                             | `--muted-foreground`     | Transparent, 60% opacity, `not-allowed` cursor |
 
 A correct group has one primary and optionally a secondary, for example Save and Cancel.
 
@@ -187,18 +197,20 @@ Base class: `.badge`. Pill-shaped (fully rounded), 12px, SemiBold, uppercase, le
 
 ## Layout and containers
 
-| Class                | Purpose                                                                                |
-| -------------------- | -------------------------------------------------------------------------------------- |
-| `.section-container` | Centered content block, max width 1200px, padding 5rem 2rem                            |
-| `.section-raised`    | Raised section background (`--muted`) for alternating bands                            |
-| `.grid-layout`       | Responsive grid, columns at least 250px wide, gap 2rem, top margin 2rem                |
-| `.card`              | Content block with `--card` background, 1px border, `--radius` corners, 1.5rem padding |
-| `.chart-box`         | Simulated chart container, 180px tall, bars align to the bottom                        |
-| `.chart-column`      | A bar inside `.chart-box`, full width, 7.5px rounded top corners                       |
+| Class                | Purpose                                                                                                                              |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `.section-container` | Centered content block, max width 1200px, padding 5rem 2rem                                                                          |
+| `.section-raised`    | Raised section background (`--muted`) for alternating bands                                                                          |
+| `.grid-layout`       | Responsive grid, columns at least 250px wide, gap 2rem, top margin 2rem                                                              |
+| `.card`              | Content block with `--card` background, 1px border, `--radius` corners, 1.5rem padding                                               |
+| `.card-static`       | A `.card` with no hover effect. Use it for cards that are not links yet                                                              |
+| `.contributor-card`  | A smaller card (0.75rem padding) that holds a `.contributor-card-inner` block with a `.contributor-avatar` and a `.contributor-role` |
+| `.chart-box`         | Simulated chart container, 180px tall, bars align to the bottom                                                                      |
+| `.chart-column`      | A bar inside `.chart-box`, full width, 7.5px rounded top corners                                                                     |
 
 Page structure: a section wraps a `.section-container`. For an alternating band, put `.section-raised` on the section and keep the container inside it.
 
-For a dark band, put the `dark` class and `bg-background` (or a chart color such as `bg-chart-5`) on the section. The tokens inside it switch to their dark values.
+For a dark band, put the `dark` class and `bg-background` on a `section`. It gets the navy-to-blue gradient with a faint grid, and the tokens inside it switch to their dark values. Use `dark` with `bg-chart-5` for a flat navy band.
 
 Base page styles: the body uses `--background` and `--foreground`, no margin or padding, line height 1.5.
 
@@ -210,10 +222,29 @@ Base page styles: the body uses `--background` and `--foreground`, no margin or 
 | `footer`   | `--sidebar` background, `--sidebar-foreground` text, top border (`--sidebar-border`), padding 1.5rem 2rem |
 | `footer a` | `--sidebar-primary` color                                                                                 |
 
-- The header shows the logo and site name on the left and the primary navigation on the right.
-- The footer repeats the site navigation next to the site name and copyright year.
+- The header shows the logo and site name on the left and the primary navigation on the right. On phones the navigation moves behind a menu button.
+- The footer repeats the site navigation next to the site name and copyright year. On phones its links stack as full-width rows.
+- Give the header the `site-header` class, the footer the `site-footer` class, and the footer link list the `footer-links` class, so the mobile styles apply.
 - Navigation links use `text-xs`. Their hover effect is described under Interactions.
 - Do not hard-code a footer color. Use the `--sidebar` tokens, and add the `dark` class to a wrapper for a dark footer band.
+
+## Mobile layout
+
+The site is built for phones first. At 40rem (640px) wide and below:
+
+| Element              | Behavior                                                                                                                                                                                                               |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.site-header`       | Wraps, with padding 1rem 1.25rem. The navigation hides behind the menu button (`.mobile-nav-toggle`) once `main.js` adds `mobile-nav-ready`. Opening the menu adds `mobile-nav-open`, and links become full-width rows |
+| `.section-container` | Padding 3.5rem 1.25rem                                                                                                                                                                                                 |
+| `h1`, `.text-h1`     | Size `clamp(2rem, 8vw, 2.25rem)`                                                                                                                                                                                       |
+| `.hero-actions`      | Buttons stack at full width                                                                                                                                                                                            |
+| `.btn`               | Minimum height 2.75rem (44px)                                                                                                                                                                                          |
+| `.footer-links`      | Links stack as rows, 14px, padding 0.75rem 0                                                                                                                                                                           |
+| `.site-footer`       | Padding 1.25rem                                                                                                                                                                                                        |
+
+The menu closes when a link is tapped, when the visitor taps outside the header, on Escape (focus returns to the button), and when the screen grows past 40rem.
+
+Keep one-hand use in mind: every tap target is at least 44px tall, and nothing important depends on hover.
 
 ## Interactions
 
@@ -225,11 +256,29 @@ Shared hover, focus, and motion styles live in `main.css`, so pages should not a
 | `.btn-primary`                             | On hover: slightly brighter, lifts 2px, and gains a soft `--primary` shadow          |
 | `.btn-secondary`, `.btn-tertiary`          | On hover: `--accent` background, `--primary` border, and lifts 2px                   |
 | `.card`                                    | On hover: `--primary` border, soft shadow, lifts 5px, and the `h3` turns `--primary` |
+| `.card-static`                             | No hover effect, for cards that are not links yet                                    |
 | Links and buttons                          | Keyboard focus shows a 2px `--ring` outline with a 4px offset                        |
 
 When the visitor prefers reduced motion, transitions and animations are cut to near zero and smooth scrolling is turned off.
 
 Cards that hold forms or other controls still lift on hover. Avoid putting a form inside a `.card` unless that is acceptable.
+
+## Icons
+
+Icons come from Boxicons 2.1.4, loaded from unpkg in the head of each page that uses them:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+/>
+```
+
+Use `<i class="bx bx-book-open" aria-hidden="true"></i>`. Size it with a Tailwind text size such as `text-2xl` and color it with a text color such as `text-primary`.
+
+Boxicons sets `display` on `.bx` in its own stylesheet, which is not inside a Tailwind layer. Display and visibility utilities such as `hidden` and `md:hidden` therefore do not work on the `<i>` itself. Put them on a wrapper element.
+
+Icons need internet access to load. If the site must work offline, self-host the Boxicons files under `assets/` and link them instead.
 
 ## Using Tailwind utilities
 
@@ -242,7 +291,7 @@ The component classes in `main.css` are not inside a Tailwind layer, so they win
 ## Adding a new page
 
 1. Create `pages/<name>/index.html` with `assets/styles/<name>.css` and `assets/script/<name>.js` beside it. The File Structure check requires both folders.
-2. Link `../../assets/styles/output.css` in the head.
-3. Use the standard header and footer.
+2. Link `../../assets/styles/output.css` in the head, and the Boxicons stylesheet if the page uses icons.
+3. Use the standard header and footer, with the `site-header`, `site-footer`, and `footer-links` classes.
 4. Build with the shared classes above. Page-only styles go in the page's own CSS file.
 5. Run `npm run css:build` and `npm run format:check` before opening a pull request, and commit the rebuilt `output.css`.
