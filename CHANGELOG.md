@@ -2,7 +2,7 @@
 
 Record meaningful changes here. Date released versions when they are approved.
 
-## [Unreleased]
+## [1.0.2]
 
 ### Added
 
