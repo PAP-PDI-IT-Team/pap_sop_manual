@@ -23,6 +23,10 @@ Record meaningful changes here. Date released versions when they are approved.
 - Reduced footer padding for a more compact footer.
 - Started tracking the generated stylesheet in git so the site renders without a local build.
 - Updated the design system documentation to match the new tokens, navigation, and interactions.
+- Replaced the local Tailwind build with the CDN browser build and removed the generated CSS files.
+- Organized shared component setup and scripts under `shared/`.
+- Added a floating mobile menu and sticky desktop header navigation.
+- Moved design-system documentation into `docs/design/`.
 
 ## [1.0.1]
 

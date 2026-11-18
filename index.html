@@ -13,282 +13,401 @@
       rel="stylesheet"
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
     />
-    <link rel="stylesheet" href="assets/styles/output.css" />
-    <script src="assets/script/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="shared/scripts/mobile-nav.js" defer></script>
+    <script src="shared/components/site-header.js" defer></script>
+    <script src="shared/components/site-footer.js" defer></script>
   </head>
 
-  <body id="top">
+  <body id="top" class="min-h-screen bg-slate-50 text-slate-900 antialiased">
     <a
       href="#main"
-      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-10 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-blue-700 focus:px-4 focus:py-2 focus:text-white"
     >
       Skip to content
     </a>
 
-    <!-- HEADER -->
-    <header class="site-header flex items-center justify-between px-8 py-6">
+    <header
+      class="site-header flex items-center justify-between border-b border-slate-200 bg-white px-6 py-4 shadow-sm sm:px-8 md:sticky md:top-0 md:z-40"
+    >
       <a href="#top" class="flex items-center gap-2">
-        <i class="bx bx-book-open text-3xl text-primary" aria-hidden="true"></i>
-
-        <span class="text-h3 mb-0!">IT SOP Manual</span>
+        <i
+          class="bx bx-book-open text-3xl text-blue-700"
+          aria-hidden="true"
+        ></i>
+        <span class="text-lg font-semibold tracking-tight">IT SOP Manual</span>
       </a>
 
-      <button
-        class="mobile-nav-toggle"
-        type="button"
-        aria-label="Open navigation menu"
-        aria-controls="primary-navigation"
-        aria-expanded="false"
-      >
-        <span class="mobile-menu-icon" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
-
-      <nav id="primary-navigation" aria-label="Primary">
-        <ul
-          class="m-0 flex list-none flex-wrap justify-end gap-x-5 gap-y-1 p-0 text-xs font-medium"
-        >
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contributors">Contributors</a></li>
+      <nav aria-label="Primary" class="hidden md:block">
+        <ul class="flex items-center gap-8 text-sm font-medium">
+          <li>
+            <a
+              class="text-slate-700 transition hover:text-blue-700"
+              href="#features"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-slate-700 transition hover:text-blue-700"
+              href="#about"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-slate-700 transition hover:text-blue-700"
+              href="#contributors"
+              >Contributors</a
+            >
+          </li>
         </ul>
       </nav>
+
+      <button
+        class="fixed bottom-6 right-6 z-30 inline-flex size-12 items-center justify-center rounded-full border border-blue-800 bg-blue-700 text-white shadow-lg transition hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 md:hidden"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="navigation-sheet"
+        aria-haspopup="dialog"
+        aria-expanded="false"
+      >
+        <i class="bx bx-menu text-2xl" aria-hidden="true"></i>
+      </button>
+
+      <dialog
+        id="navigation-sheet"
+        aria-labelledby="navigation-title"
+        class="fixed inset-x-0 top-auto bottom-0 m-0 w-full max-w-none rounded-t-2xl border-0 bg-white p-6 text-slate-900 shadow-2xl backdrop:bg-slate-950/50 md:inset-x-auto md:bottom-auto md:left-auto md:right-6 md:top-20 md:w-72 md:rounded-xl"
+      >
+        <div class="mb-4 flex items-center justify-between">
+          <h2 id="navigation-title" class="text-lg font-semibold">
+            Navigation
+          </h2>
+          <button
+            class="inline-flex size-10 items-center justify-center rounded-lg text-slate-600 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+            type="button"
+            aria-label="Close navigation menu"
+            data-navigation-close
+          >
+            <i class="bx bx-x text-2xl" aria-hidden="true"></i>
+          </button>
+        </div>
+        <nav aria-label="Primary">
+          <ul class="flex flex-col gap-1">
+            <li>
+              <a
+                class="block rounded-lg px-4 py-3 font-medium text-slate-700 transition hover:bg-blue-50 hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-blue-700"
+                href="#features"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-lg px-4 py-3 font-medium text-slate-700 transition hover:bg-blue-50 hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-blue-700"
+                href="#about"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-lg px-4 py-3 font-medium text-slate-700 transition hover:bg-blue-50 hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-blue-700"
+                href="#contributors"
+                >Contributors</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </dialog>
     </header>
 
     <main id="main">
-      <!-- HERO -->
-      <section class="dark bg-background">
-        <div class="section-container">
-          <div class="grid items-center gap-12 md:grid-cols-2">
-            <div>
-              <span class="badge badge-info mb-6">
-                Standard operating procedures
+      <section
+        class="overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-blue-800 text-white"
+      >
+        <div
+          class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28"
+        >
+          <div>
+            <span
+              class="mb-6 inline-flex w-fit rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-900"
+            >
+              Standard operating procedures
+            </span>
+
+            <div class="mb-4 flex items-center justify-between gap-4 md:block">
+              <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+                IT SOP <span class="text-cyan-300">Manual</span>
+              </h1>
+
+              <span class="shrink-0 md:hidden" aria-hidden="true">
+                <i class="bx bx-book-open text-6xl text-cyan-300"></i>
               </span>
+            </div>
 
-              <div
-                class="mb-4 flex items-center justify-between gap-4 md:block"
+            <p class="max-w-md leading-relaxed text-blue-100">
+              One shared sign to follow for IT procedures, project scope, and
+              handoffs between departments.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#features"
+                class="inline-flex min-h-11 items-center justify-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
               >
-                <h1 class="mb-0! md:mb-4!">
-                  IT SOP <span class="text-chart-2">Manual</span>
-                </h1>
-
-                <span class="shrink-0 md:hidden" aria-hidden="true"
-                  ><i
-                    class="bx bx-book-open text-6xl leading-none text-chart-2"
-                  ></i
-                ></span>
-              </div>
-
-              <p class="max-w-md">
-                One shared sign to follow for IT procedures, project scope, and
-                handoffs between departments.
-              </p>
-
-              <div class="hero-actions mt-8 flex flex-wrap gap-3">
-                <a href="#features" class="btn btn-primary">
-                  Explore the Manual
-                </a>
-
-                <a href="#about" class="btn btn-secondary btn-border">
-                  About the Manual
-                </a>
-              </div>
+                Explore the Manual
+              </a>
+              <a
+                href="#about"
+                class="inline-flex min-h-11 items-center justify-center rounded-lg border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+              >
+                About the Manual
+              </a>
             </div>
+          </div>
 
-            <div class="hidden justify-center md:flex" aria-hidden="true">
-              <i
-                class="bx bx-book-open text-[20rem] leading-none text-chart-2"
-                aria-hidden="true"
-              ></i>
-            </div>
+          <div class="hidden justify-center md:flex" aria-hidden="true">
+            <i class="bx bx-book-open text-[20rem] leading-none text-cyan-300">
+            </i>
           </div>
         </div>
       </section>
 
-      <!-- QUICK ACCESS -->
-      <section id="features">
-        <div class="section-container text-center">
-          <h2>Everything You Need</h2>
-
-          <p class="mx-auto max-w-2xl">
+      <section id="features" class="px-6 py-16 sm:py-20">
+        <div class="mx-auto max-w-6xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight text-slate-900">
+            Everything You Need
+          </h2>
+          <p class="mx-auto mt-3 max-w-2xl leading-relaxed text-slate-600">
             Quick access to key resources and development standards.
           </p>
 
-          <div class="grid-layout text-left">
-            <!-- CARD 1 -->
+          <div class="mt-10 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-4">
             <article
-              class="card card-static flex flex-col min-h-60 scroll-mt-6"
+              class="flex min-h-60 flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
             >
               <div
-                class="mb-4 grid size-12 place-items-center rounded-full bg-muted"
+                class="mb-4 grid size-12 place-items-center rounded-full bg-blue-50 text-blue-700"
               >
-                <i
-                  class="bx bx-file text-2xl text-primary"
-                  aria-hidden="true"
-                ></i>
+                <i class="bx bx-file text-2xl" aria-hidden="true"></i>
               </div>
-
-              <h3>Reference</h3>
-
-              <p>
+              <h3 class="text-lg font-semibold text-slate-900">Reference</h3>
+              <p class="mt-2 leading-relaxed text-slate-600">
                 Provide a shared reference for IT and requesting departments.
               </p>
-
-              <span class="badge badge-warning mt-auto -mb-2">Coming soon</span>
+              <span
+                class="mt-auto inline-flex w-fit rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-900"
+                >Coming soon</span
+              >
             </article>
 
-            <!-- CARD 2 -->
             <article
-              class="card card-static flex flex-col min-h-60 scroll-mt-6"
+              class="flex min-h-60 flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
             >
               <div
-                class="mb-4 grid size-12 place-items-center rounded-full bg-muted"
+                class="mb-4 grid size-12 place-items-center rounded-full bg-blue-50 text-blue-700"
               >
-                <i
-                  class="bx bx-group text-2xl text-primary"
-                  aria-hidden="true"
-                ></i>
+                <i class="bx bx-group text-2xl" aria-hidden="true"></i>
               </div>
-
-              <h3>Team</h3>
-
-              <p>Meet the team and their roles.</p>
-
-              <span class="badge badge-warning mt-auto -mb-2">Coming soon</span>
+              <h3 class="text-lg font-semibold text-slate-900">Team</h3>
+              <p class="mt-2 leading-relaxed text-slate-600">
+                Meet the team and their roles.
+              </p>
+              <span
+                class="mt-auto inline-flex w-fit rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-900"
+                >Coming soon</span
+              >
             </article>
 
-            <!-- CARD 3 -->
             <article
-              class="card card-static flex flex-col min-h-60 scroll-mt-6"
+              class="flex min-h-60 flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
             >
               <div
-                class="mb-4 grid size-12 place-items-center rounded-full bg-muted"
+                class="mb-4 grid size-12 place-items-center rounded-full bg-blue-50 text-blue-700"
               >
-                <i
-                  class="bx bx-book-open text-2xl text-primary"
-                  aria-hidden="true"
-                ></i>
+                <i class="bx bx-book-open text-2xl" aria-hidden="true"></i>
               </div>
-
-              <h3>Accountability</h3>
-
-              <p>Document project scope, handoffs, and approval points.</p>
-
-              <span class="badge badge-warning mt-auto -mb-2">Coming soon</span>
+              <h3 class="text-lg font-semibold text-slate-900">
+                Accountability
+              </h3>
+              <p class="mt-2 leading-relaxed text-slate-600">
+                Document project scope, handoffs, and approval points.
+              </p>
+              <span
+                class="mt-auto inline-flex w-fit rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-900"
+                >Coming soon</span
+              >
             </article>
 
-            <!-- CARD 4 -->
             <article
-              class="card card-static flex flex-col min-h-60 scroll-mt-6"
+              class="flex min-h-60 flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
             >
               <div
-                class="mb-4 grid size-12 place-items-center rounded-full bg-muted"
+                class="mb-4 grid size-12 place-items-center rounded-full bg-blue-50 text-blue-700"
               >
-                <i
-                  class="bx bx-help-circle text-2xl text-primary"
-                  aria-hidden="true"
-                ></i>
+                <i class="bx bx-help-circle text-2xl" aria-hidden="true"></i>
               </div>
-
-              <h3>Knowledge Transfer</h3>
-
-              <p>
+              <h3 class="text-lg font-semibold text-slate-900">
+                Knowledge Transfer
+              </h3>
+              <p class="mt-2 leading-relaxed text-slate-600">
                 Support onboarding and knowledge transfer within the IT team.
               </p>
-
-              <span class="badge badge-warning mt-auto -mb-2">Coming soon</span>
+              <span
+                class="mt-auto inline-flex w-fit rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-900"
+                >Coming soon</span
+              >
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="section-raised">
-        <div class="section-container text-center">
-          <h2>About</h2>
-
-          <p class="mx-auto max-w-2xl">
+      <section id="about" class="bg-slate-100 px-6 py-16 sm:py-20">
+        <div class="mx-auto max-w-6xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight text-slate-900">
+            About
+          </h2>
+          <p class="mx-auto mt-3 max-w-2xl leading-relaxed text-slate-600">
             This release sets the design, structure, and standards. Full content
             comes later.
           </p>
 
-          <div class="grid-layout text-left">
-            <article class="card card-static">
-              <span class="badge badge-success">Included</span>
-              <h3 class="mt-4">Design</h3>
-              <p>Shared colors, type, and components for every page.</p>
+          <div class="mt-10 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-4">
+            <article class="rounded-xl border border-slate-200 bg-white p-6">
+              <span
+                class="inline-flex rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-900"
+                >Included</span
+              >
+              <h3 class="mt-4 text-lg font-semibold text-slate-900">Design</h3>
+              <p class="mt-2 leading-relaxed text-slate-600">
+                Shared colors, type, and components for every page.
+              </p>
             </article>
-            <article class="card card-static">
-              <span class="badge badge-success">Included</span>
-              <h3 class="mt-4">Structure</h3>
-              <p>One header, one footer, and a standard page layout.</p>
+            <article class="rounded-xl border border-slate-200 bg-white p-6">
+              <span
+                class="inline-flex rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-900"
+                >Included</span
+              >
+              <h3 class="mt-4 text-lg font-semibold text-slate-900">
+                Structure
+              </h3>
+              <p class="mt-2 leading-relaxed text-slate-600">
+                One header, one footer, and a standard page layout.
+              </p>
             </article>
-            <article class="card card-static">
-              <span class="badge badge-success">Included</span>
-              <h3 class="mt-4">Standards</h3>
-              <p>Rules every page follows before it is reviewed.</p>
+            <article class="rounded-xl border border-slate-200 bg-white p-6">
+              <span
+                class="inline-flex rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-900"
+                >Included</span
+              >
+              <h3 class="mt-4 text-lg font-semibold text-slate-900">
+                Standards
+              </h3>
+              <p class="mt-2 leading-relaxed text-slate-600">
+                Rules every page follows before it is reviewed.
+              </p>
             </article>
-            <article class="card card-static">
-              <span class="badge badge-warning">Pending</span>
-              <h3 class="mt-4">Full contents</h3>
-              <p>Detailed content is excluded from this release.</p>
+            <article class="rounded-xl border border-slate-200 bg-white p-6">
+              <span
+                class="inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-900"
+                >Pending</span
+              >
+              <h3 class="mt-4 text-lg font-semibold text-slate-900">
+                Full contents
+              </h3>
+              <p class="mt-2 leading-relaxed text-slate-600">
+                Detailed content is excluded from this release.
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- CONTRIBUTORS -->
-      <section id="contributors">
-        <div class="section-container text-center">
-          <h2>Contributors</h2>
-
-          <p class="mx-auto max-w-2xl">
+      <section id="contributors" class="px-6 py-16 sm:py-20">
+        <div class="mx-auto max-w-6xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight text-slate-900">
+            Contributors
+          </h2>
+          <p class="mx-auto mt-3 max-w-2xl leading-relaxed text-slate-600">
             People who helped build and verify the IT SOP Manual.
           </p>
 
-          <div class="grid-layout text-left">
-            <article class="card contributor-card">
-              <div class="contributor-card-inner">
-                <span class="badge badge-info">01</span>
-
-                <div class="contributor-avatar" aria-hidden="true">
-                  <span>CA</span>
+          <div class="mt-10 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                <span
+                  class="inline-flex rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-900"
+                  >01</span
+                >
+                <div
+                  class="my-4 grid aspect-[1.75] place-items-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-950 via-blue-700 to-cyan-400"
+                  aria-hidden="true"
+                >
+                  <span
+                    class="grid size-20 place-items-center rounded-full border-2 border-white/90 bg-gradient-to-br from-blue-600 to-cyan-400 text-2xl font-bold tracking-wide text-white shadow-lg"
+                    >CA</span
+                  >
                 </div>
-
-                <h3>Chenz Samuel Abarca</h3>
-
-                <p class="contributor-role">IT Intern</p>
+                <h3 class="text-xl font-semibold text-slate-900">
+                  Chenz Samuel Abarca
+                </h3>
+                <p
+                  class="mt-3 rounded-lg border border-slate-200 bg-white p-3 text-slate-600"
+                >
+                  IT Intern
+                </p>
               </div>
             </article>
 
-            <article class="card contributor-card">
-              <div class="contributor-card-inner">
-                <span class="badge badge-info">02</span>
-
-                <div class="contributor-avatar" aria-hidden="true">
-                  <span>EB</span>
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                <span
+                  class="inline-flex rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-900"
+                  >02</span
+                >
+                <div
+                  class="my-4 grid aspect-[1.75] place-items-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-950 via-blue-700 to-cyan-400"
+                  aria-hidden="true"
+                >
+                  <span
+                    class="grid size-20 place-items-center rounded-full border-2 border-white/90 bg-gradient-to-br from-blue-600 to-cyan-400 text-2xl font-bold tracking-wide text-white shadow-lg"
+                    >EB</span
+                  >
                 </div>
-
-                <h3>Ezeckiel Barda</h3>
-
-                <p class="contributor-role">IT Intern</p>
+                <h3 class="text-xl font-semibold text-slate-900">
+                  Ezeckiel Barda
+                </h3>
+                <p
+                  class="mt-3 rounded-lg border border-slate-200 bg-white p-3 text-slate-600"
+                >
+                  IT Intern
+                </p>
               </div>
             </article>
 
-            <article class="card contributor-card">
-              <div class="contributor-card-inner">
-                <span class="badge badge-info">03</span>
-
-                <div class="contributor-avatar" aria-hidden="true">
-                  <span>DA</span>
+            <article class="rounded-xl border border-slate-200 bg-white p-4">
+              <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                <span
+                  class="inline-flex rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-900"
+                  >03</span
+                >
+                <div
+                  class="my-4 grid aspect-[1.75] place-items-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-950 via-blue-700 to-cyan-400"
+                  aria-hidden="true"
+                >
+                  <span
+                    class="grid size-20 place-items-center rounded-full border-2 border-white/90 bg-gradient-to-br from-blue-600 to-cyan-400 text-2xl font-bold tracking-wide text-white shadow-lg"
+                    >DA</span
+                  >
                 </div>
-
-                <h3>David Agruda</h3>
-
-                <p class="contributor-role">IT Intern</p>
+                <h3 class="text-xl font-semibold text-slate-900">
+                  David Agruda
+                </h3>
+                <p
+                  class="mt-3 rounded-lg border border-slate-200 bg-white p-3 text-slate-600"
+                >
+                  IT Intern
+                </p>
               </div>
             </article>
           </div>
@@ -296,33 +415,35 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <section class="dark bg-background">
-      <footer class="site-footer px-8 py-4">
-        <div
-          class="mx-auto flex max-w-300 flex-col gap-2 md:flex-row md:items-center md:justify-between"
-        >
-          <div>
-            <p class="text-h3 mb-0! text-foreground!">IT SOP Manual</p>
-
-            <p class="text-muted-sm">Build. Align. Deliver.</p>
-          </div>
-
-          <nav aria-label="Site">
-            <ul
-              class="footer-links m-0 flex list-none flex-wrap gap-x-6 gap-y-2 p-0 text-xs"
-            >
-              <li><a href="#features">Features</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contributors">Contributors</a></li>
-            </ul>
-          </nav>
+    <footer class="bg-slate-950 px-6 py-8 pb-24 text-slate-100 sm:px-8 md:pb-8">
+      <div
+        class="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p class="text-lg font-semibold">IT SOP Manual</p>
+          <p class="mt-1 text-sm text-slate-400">Build. Align. Deliver.</p>
         </div>
-
-        <p class="text-muted-sm mx-auto mt-2 max-w-300 text-center">
-          &copy; <span id="footer-year">2026</span> IT SOP Manual
-        </p>
-      </footer>
-    </section>
+        <nav aria-label="Site">
+          <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <li>
+              <a class="text-cyan-300 hover:text-white" href="#features"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a class="text-cyan-300 hover:text-white" href="#about">About</a>
+            </li>
+            <li>
+              <a class="text-cyan-300 hover:text-white" href="#contributors"
+                >Contributors</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p class="mx-auto mt-6 max-w-6xl text-center text-xs text-slate-400">
+        &copy; <span id="footer-year">2026</span> IT SOP Manual
+      </p>
+    </footer>
   </body>
 </html>

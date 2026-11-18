@@ -11,17 +11,21 @@ A simple alignment site for IT standard operating procedures, project scope, and
 
 ## Technology and local setup
 
-The site uses plain HTML, CSS, and JavaScript. No installation or build step is required.
+The site uses HTML, JavaScript, and Tailwind CSS utilities from a CDN. It also
+loads Boxicons from a CDN, so an internet connection is required. There is no
+local CSS build step.
 
-1. Download or clone the project.
+1. Clone or download the project.
 2. Open `index.html` in a browser.
-3. Navigate to Process Library and About to check the starter pages.
+3. Use the floating menu button on smaller screens; on desktop, the sticky
+   header keeps section links available while scrolling.
 
 An editor's local preview server is optional. Markdown links may display as text or download depending on the browser/server; HTML pages are the site interface.
 
 ## Project structure
 
-See [STRUCTURE_SAMPLE.md](STRUCTURE_SAMPLE.md) for the full layout and naming conventions. Shared assets live under `assets/`; each feature page can keep its own assets beside its HTML file.
+See [STRUCTURE_SAMPLE.md](STRUCTURE_SAMPLE.md) for the full layout and naming conventions. Shared assets live under `assets/`; each feature page can keep its own assets beside its HTML file. See the
+[design system](docs/design/design-system.md) for styling guidance.
 
 ## Contributing
 
@@ -39,6 +43,7 @@ Process owners must approve operational content. Interns should use sanitized ex
 - [Documentation index](docs/README.md)
 - [Draft AC Local workflow](docs/ac-local-deployment.md)
 - [Reusable procedure template](docs/sop-template.md)
+- [Design system](docs/design/design-system.md)
 - [Security policy](SECURITY.md)
 - [License status](LICENSE.md)
 
