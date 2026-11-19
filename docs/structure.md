@@ -17,7 +17,12 @@ it_sop_manual/
 │   ├── systems/
 │   └── team_records/
 └── pages/
-    └── about/
+    ├── about/
+    │   ├── index.html
+    │   └── assets/
+    │       ├── styles/
+    │       └── script/
+    └── manual/
         ├── index.html
         └── assets/
             ├── styles/
