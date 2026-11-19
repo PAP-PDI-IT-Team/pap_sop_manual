@@ -40,6 +40,7 @@ Process owners must approve operational content. Interns should use sanitized ex
 
 ## Documentation
 
+- [Manual contents (HTML)](pages/manual/index.html)
 - [Documentation index](docs/README.md)
 - [Draft AC Local workflow](docs/ac-local-deployment.md)
 - [Reusable procedure template](docs/sop-template.md)

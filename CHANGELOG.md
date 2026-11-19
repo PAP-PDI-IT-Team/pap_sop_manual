@@ -2,17 +2,17 @@
 
 Record meaningful changes here. Date released versions when they are approved.
 
-## [Unreleased]
+## [1.0.3]
 
 ### Added
 
-- Added the IT SOP Manual landing page with a skip link, hero, four resource cards (Reference, Team, Accountability, Knowledge Transfer), About section with scope cards, and Contributors section.
+- Added the IT SOP Manual landing page with a skip link, hero, three resource cards, and Contributors section.
 - Added shared header and footer navigation, including a mobile menu, with links to the page sections.
 - Added a mobile-first layout with stacked buttons, larger tap targets, and full-width footer links.
 - Updated color tokens to a blue and cyan palette with brand tokens for light and dark themes.
 - Switched page icons from inline SVGs to the Boxicons library.
-- Added consistent mobile sizing and scroll-triggered entrance animations for About cards, with compact status badges.
-- Added forward lift, blue-to-cyan gradient hover states, and icon/badge motion to feature, About, and contributor cards.
+- Added an HTML manual contents page with procedure summaries, source links, and visible draft statuses.
+- Added forward lift, blue-to-cyan gradient hover states, and icon motion to feature and contributor cards.
 - Animated the mobile navigation sheet and staggered its links, with reduced-motion support and Escape-key focus restoration.
 - Added shared hover, keyboard focus, and reduced-motion styles for links and buttons.
 - Reduced footer padding for a more compact footer.
