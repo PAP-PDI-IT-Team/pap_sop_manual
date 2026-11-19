@@ -4,16 +4,6 @@ Record meaningful changes here. Date released versions when they are approved.
 
 ## [Unreleased]
 
-### Added
-
-- Initial HTML, CSS, and JavaScript scaffold with Home, Process Library, and About pages.
-- Shared assets and About-page asset folders.
-- README, Code of Conduct, structure sample, security policy, and pending license notice.
-- Pull request and issue templates for repository collaboration.
-- Draft documentation lifecycle SOP, contributor onboarding, AC Local deployment example, and reusable SOP template.
-
-## [1.0.2]
-
 - Added the IT SOP Manual landing page with a skip link, hero, four resource cards (Reference, Team, Accountability, Knowledge Transfer), About section with scope cards, and Contributors section.
 - Added shared header and footer navigation, including a mobile menu, with links to the page sections.
 - Added a mobile-first layout with stacked buttons, larger tap targets, and full-width footer links.
@@ -27,6 +17,18 @@ Record meaningful changes here. Date released versions when they are approved.
 - Organized shared component setup and scripts under `shared/`.
 - Added a floating mobile menu and sticky desktop header navigation.
 - Moved design-system documentation into `docs/design/`.
+
+## [1.0.2]
+
+### Added
+
+- Centralized documentation navigation and numbered jargon definitions, simplified the structure reference, and recorded documentation rules with top-to-bottom Mermaid guidance.
+- Job Order discovery records organized into process references and supporting discovery records, with documentation navigation and developer and QA onboarding links.
+- Initial HTML, CSS, and JavaScript scaffold with Home, Process Library, and About pages.
+- Shared assets and About-page asset folders.
+- README, Code of Conduct, structure sample, security policy, and pending license notice.
+- Pull request and issue templates for repository collaboration.
+- Draft documentation lifecycle SOP, contributor onboarding, AC Local deployment example, and reusable SOP template.
 
 ## [1.0.1]
 
