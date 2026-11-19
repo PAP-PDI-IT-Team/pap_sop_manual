@@ -4,12 +4,17 @@ Record meaningful changes here. Date released versions when they are approved.
 
 ## [Unreleased]
 
+### Added
+
 - Added the IT SOP Manual landing page with a skip link, hero, four resource cards (Reference, Team, Accountability, Knowledge Transfer), About section with scope cards, and Contributors section.
 - Added shared header and footer navigation, including a mobile menu, with links to the page sections.
 - Added a mobile-first layout with stacked buttons, larger tap targets, and full-width footer links.
 - Updated color tokens to a blue and cyan palette with brand tokens for light and dark themes.
 - Switched page icons from inline SVGs to the Boxicons library.
-- Added shared hover, keyboard focus, and reduced-motion styles for links, buttons, and cards. Cards that are not links yet no longer lift on hover.
+- Added consistent mobile sizing and scroll-triggered entrance animations for About cards, with compact status badges.
+- Added forward lift, blue-to-cyan gradient hover states, and icon/badge motion to feature, About, and contributor cards.
+- Animated the mobile navigation sheet and staggered its links, with reduced-motion support and Escape-key focus restoration.
+- Added shared hover, keyboard focus, and reduced-motion styles for links and buttons.
 - Reduced footer padding for a more compact footer.
 - Started tracking the generated stylesheet in git so the site renders without a local build.
 - Updated the design system documentation to match the new tokens, navigation, and interactions.
@@ -19,8 +24,6 @@ Record meaningful changes here. Date released versions when they are approved.
 - Moved design-system documentation into `docs/design/`.
 
 ## [1.0.2]
-
-### Added
 
 - Centralized documentation navigation and numbered jargon definitions, simplified the structure reference, and recorded documentation rules with top-to-bottom Mermaid guidance.
 - Job Order discovery records organized into process references and supporting discovery records, with documentation navigation and developer and QA onboarding links.

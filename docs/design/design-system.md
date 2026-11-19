@@ -19,6 +19,9 @@ utilities and does not need to work offline.
   and give icon-only controls accessible names.
 - Use the native `<dialog>` element for modal navigation and keep its control
   button's `aria-expanded` state synchronized.
+- Keep the About cards at a consistent minimum height. Use restrained hover
+  states across content cards and reduced-motion-aware card and mobile-menu
+  animations.
 
 ## External resources
 
