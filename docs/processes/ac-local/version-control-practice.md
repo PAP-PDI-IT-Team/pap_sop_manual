@@ -1,7 +1,5 @@
 # Version Control Practice
 
-**Status:** Draft — describes the reported branch and PR flow.
-
 ## Branch flow
 
 ```mermaid

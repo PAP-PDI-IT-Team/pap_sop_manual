@@ -2,6 +2,13 @@
 
 Record meaningful changes here. Date released versions when they are approved.
 
+## [1.0.5]
+
+### Updated
+
+- Confirm 2 processes documented with upper management
+- Added the new changes to flow on JO lifecycle
+
 ## [1.0.4]
 
 - Edited static.yml for auto deploy, fixes removed css styles build
