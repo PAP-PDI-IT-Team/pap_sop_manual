@@ -22,9 +22,14 @@ it_sop_manual/
     │   └── assets/
     │       ├── styles/
     │       └── script/
-    └── manual/
-        ├── index.html
-        └── assets/
-            ├── styles/
-            └── script/
+    ├── manual/
+    │   ├── index.html
+    │   └── assets/
+    │       ├── styles/
+    │       └── script/
+    ├── template-sample/
+    │   ├── index.html
+    │   └── assets/
+    │       ├── styles/
+    │       └── script/
 ```
