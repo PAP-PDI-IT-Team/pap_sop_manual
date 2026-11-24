@@ -22,9 +22,10 @@ it_sop_manual/
     │   └── assets/
     │       ├── styles/
     │       └── script/
-    └── manual/
-        ├── index.html
-        └── assets/
-            ├── styles/
-            └── script/
+    ├── requests-ownership/
+    │   └── index.html
+    ├── development-validation/
+    │   └── index.html
+    └── information-documentation/
+        └── index.html
 ```
