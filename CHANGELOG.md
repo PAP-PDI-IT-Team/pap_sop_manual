@@ -2,6 +2,17 @@
 
 Record meaningful changes here. Date released versions when they are approved.
 
+## [1.0.6]
+
+### Updated
+
+- Rebuilt the mobile navigation as a left slide-in drawer with grouped sections, an active-page highlight, and "Soon" badges for pages not yet available.
+- Added a desktop documentation layout to the Manual Contents and Content Template Sample pages: a left sidebar with grouped page links and an "On this page" list that highlights the section being read.
+- Built the sidebar and the mobile drawer from one shared list in `shared/scripts/site-nav.js`, so a new page is added in one place.
+- Show the mobile menu button and drawer below the large breakpoint, where the sidebar takes over.
+- Added the mobile navigation to the Content Template Sample page.
+- Moved the drawer slide, backdrop fade, and section scroll offset into Tailwind classes.
+
 ## [1.0.5]
 
 ### Updated
@@ -14,8 +25,6 @@ Record meaningful changes here. Date released versions when they are approved.
 - Edited static.yml for auto deploy, fixes removed css styles build
 
 ## [1.0.3]
-
-### Added
 
 - Added the IT SOP Manual landing page with a skip link, hero, three resource cards, and Contributors section.
 - Added shared header and footer navigation, including a mobile menu, with links to the page sections.
