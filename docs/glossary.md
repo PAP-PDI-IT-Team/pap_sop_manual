@@ -83,7 +83,7 @@ A reported demonstration and evaluation of changes with ASD; formal attendance a
 
 ### 22. Cherry-pick
 
-A Git operation that replays selected commits. The local practice described as “cherry-pick by lines” means manually copying/editing selected code lines; see [version-control practice](processes/version-control-practice.md#working-with-changes).
+A Git operation that replays selected commits. The local practice described as “cherry-pick by lines” means manually copying/editing selected code lines; see [version-control practice](processes/ac-local/version-control-practice.md#working-with-changes).
 
 ### 23. Regression testing
 

@@ -12,7 +12,7 @@ flowchart TD
     B -. Signing order and handover conditions to confirm .-> C[Manager or PM assigns development work]
 ```
 
-The manager or [PM [5]](../glossary.md#5-pm) distributes work in meetings or direct messages. Microsoft Planner is used for tracking. Continue with the [implementation workflow](implementation-workflow.md) for delivery.
+The manager or [PM [5]](../glossary.md#5-pm) distributes work in meetings or direct messages. Microsoft Planner is used for tracking. Continue with the [implementation workflow](jo-implementation-workflow.md) for delivery.
 
 ## Details to verify
 

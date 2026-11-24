@@ -26,4 +26,4 @@ flowchart TD
 | Preproduction | A [PR [14]](../glossary.md#14-pr) proposes those changes for [preprod [19]](../glossary.md#19-preprod). |
 | Production | After [ASD [6]](../glossary.md#6-asd) acceptance, a PR targets main. An authorized person approves, a senior merges, and deployment is automatic. |
 
-For QA, huddles, live checks, and closure, see the [implementation workflow](implementation-workflow.md).
+For QA, huddles, live checks, and closure, see the [implementation workflow](../jo-implementation-workflow.md).

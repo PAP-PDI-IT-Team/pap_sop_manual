@@ -29,6 +29,14 @@
   transition: transform 200ms ease;
 }
 
+.scrollbar-hidden {
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
 @media (hover: hover) {
   .interactive-card:hover {
     transform: translateY(-6px) scale(1.025);

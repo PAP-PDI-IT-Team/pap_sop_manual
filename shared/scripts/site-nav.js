@@ -1,8 +1,6 @@
-// Single source for site navigation. Renders the mobile drawer and the
-// desktop sidebar from one list, so a new page is added in one place.
+// Single source for the desktop sidebar and mobile drawer navigation.
 (() => {
   const rootUrl = new URL("../../", document.currentScript.src);
-
   const navigationGroups = [
     {
       title: "Get started",
@@ -10,37 +8,25 @@
         { label: "Home", path: "index.html" },
         { label: "Features", path: "index.html#features" },
         { label: "Contributors", path: "index.html#contributors" },
-        { label: "About", path: "pages/about/index.html", soon: true },
       ],
     },
     {
       title: "Manual",
       links: [
-        { label: "Manual Contents", path: "pages/manual/index.html" },
         {
-          label: "Job Order Creation",
-          path: "pages/manual/index.html#job-order-creation",
+          label: "Requests and ownership",
+          path: "pages/requests-ownership/index.html",
+          matchPathOnly: true,
         },
         {
-          label: "Implementation Workflow",
-          path: "pages/manual/index.html#implementation-workflow",
+          label: "Development and validation",
+          path: "pages/development-validation/index.html",
+          matchPathOnly: true,
         },
         {
-          label: "Version Control Practice",
-          path: "pages/manual/index.html#version-control-practice",
-        },
-        {
-          label: "Documentation Guide",
-          path: "pages/manual/index.html#documentation-guide",
-        },
-      ],
-    },
-    {
-      title: "Contribute",
-      links: [
-        {
-          label: "Content Template Sample",
-          path: "pages/template-sample/index.html",
+          label: "Information and documentation",
+          path: "pages/information-documentation/index.html",
+          matchPathOnly: true,
         },
       ],
     },
@@ -51,13 +37,8 @@
     "block rounded-lg px-4 py-2.5 text-slate-800 transition hover:bg-slate-100 hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700";
   const activeClass =
     "block rounded-lg bg-blue-50 px-4 py-2.5 font-semibold text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700";
-  const soonClass =
-    "flex items-center justify-between rounded-lg px-4 py-2.5 text-slate-400";
-  const badgeClass =
-    "rounded-full border border-slate-200 bg-white px-2 py-0.5 text-xs font-medium text-slate-500";
-
   const normalizePath = (pathname) => pathname.replace(/index\.html$/, "");
-  const currentPath = normalizePath(window.location.pathname);
+  const navigationAnchors = [];
 
   const createElementWithClass = (tagName, className, textContent) => {
     const element = document.createElement(tagName);
@@ -72,25 +53,13 @@
 
   const buildLinkItem = (link) => {
     const listItem = document.createElement("li");
-
-    if (link.soon) {
-      const soonItem = createElementWithClass("span", soonClass, link.label);
-      soonItem.setAttribute("aria-disabled", "true");
-      soonItem.append(createElementWithClass("span", badgeClass, "Soon"));
-      listItem.append(soonItem);
-      return listItem;
-    }
-
     const linkUrl = new URL(link.path, rootUrl);
     const anchor = createElementWithClass("a", linkClass, link.label);
+
     anchor.href = linkUrl.href;
-
-    if (!linkUrl.hash && normalizePath(linkUrl.pathname) === currentPath) {
-      anchor.className = activeClass;
-      anchor.setAttribute("aria-current", "page");
-    }
-
+    navigationAnchors.push({ anchor, link, linkUrl });
     listItem.append(anchor);
+
     return listItem;
   };
 
@@ -107,7 +76,32 @@
     return section;
   };
 
+  const updateActiveLinks = () => {
+    const currentPath = normalizePath(window.location.pathname);
+    const hasCurrentHash = Boolean(window.location.hash);
+
+    navigationAnchors.forEach(({ anchor, link, linkUrl }) => {
+      const isCurrentPath = normalizePath(linkUrl.pathname) === currentPath;
+      const isCurrentLink = linkUrl.hash
+        ? window.location.hash === linkUrl.hash
+        : link.matchPathOnly || !hasCurrentHash;
+
+      anchor.className =
+        isCurrentPath && isCurrentLink ? activeClass : linkClass;
+
+      if (isCurrentPath && isCurrentLink) {
+        anchor.setAttribute("aria-current", linkUrl.hash ? "location" : "page");
+      } else {
+        anchor.removeAttribute("aria-current");
+      }
+    });
+  };
+
   document.querySelectorAll("[data-site-nav]").forEach((container) => {
+    container.classList.add("flex", "flex-col", "gap-6");
     navigationGroups.forEach((group) => container.append(buildGroup(group)));
   });
+
+  updateActiveLinks();
+  window.addEventListener("hashchange", updateActiveLinks);
 })();

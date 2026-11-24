@@ -22,6 +22,12 @@ utilities and does not need to work offline.
 - Keep the About cards at a consistent minimum height. Use restrained hover
   states across content cards and reduced-motion-aware card and mobile-menu
   animations.
+- Keep active documentation navigation and important links in the established
+  blue and cyan palette.
+- Keep manual-page copy and previous/next controls compact, keyboard
+  accessible, and aligned with the page title.
+- Keep the left navigation focused on the manual's top-level pages. Keep the
+  dynamic page TOC on the right for detailed, page-specific heading links.
 
 ## External resources
 
