@@ -6,6 +6,8 @@ Record meaningful changes here. Date released versions when they are approved.
 
 ### Updated
 
+- Matched the Glossary page to the shared documentation layout and added Glossary links beside Home in inner-page headers.
+- Added a responsive glossary with search and category filters.
 - Centered the IT SOP Manual footer branding above the copyright notice and removed footer navigation links.
 - Added a shared search dialog with page and heading results and Ctrl/Cmd+K support across the homepage and documentation pages.
 - Rebuilt the mobile navigation as a left slide-in drawer with grouped sections, an active-page highlight, and "Soon" badges for pages not yet available.

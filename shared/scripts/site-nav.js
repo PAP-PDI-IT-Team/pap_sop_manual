@@ -28,6 +28,11 @@
           path: "pages/information-documentation/index.html",
           matchPathOnly: true,
         },
+        {
+          label: "Glossary",
+          path: "pages/glossary/index.html",
+          matchPathOnly: true,
+        },
       ],
     },
   ];
