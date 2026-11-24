@@ -6,6 +6,7 @@ Record meaningful changes here. Date released versions when they are approved.
 
 ### Updated
 
+- Centered the IT SOP Manual footer branding above the copyright notice and removed footer navigation links.
 - Rebuilt the mobile navigation as a left slide-in drawer with grouped sections, an active-page highlight, and "Soon" badges for pages not yet available.
 - Added a desktop documentation layout to the Manual Contents and Content Template Sample pages: a left sidebar with grouped page links and an "On this page" list that highlights the section being read.
 - Built the sidebar and the mobile drawer from one shared list in `shared/scripts/site-nav.js`, so a new page is added in one place.

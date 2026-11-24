@@ -14,7 +14,6 @@ The form title recorded in the sample. Equivalence with JO remains open.
 
 Developers and maintainer of systems, website infrastructure, hardware devices, internet and technological devices.
 
-
 ### 5. PM - Project Manager
 
 PA reported work-assignment role. Decision authority remains unverified.
