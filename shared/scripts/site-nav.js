@@ -37,6 +37,13 @@
     "block rounded-lg px-4 py-2.5 text-slate-800 transition hover:bg-slate-100 hover:text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700";
   const activeClass =
     "block rounded-lg bg-blue-50 px-4 py-2.5 font-semibold text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700";
+  window.siteScripts = window.siteScripts || {};
+  window.siteScripts.navigationItems = navigationGroups.flatMap((group) =>
+    group.links.map((link) => ({
+      label: link.label,
+      url: new URL(link.path, rootUrl).href,
+    })),
+  );
   const normalizePath = (pathname) => pathname.replace(/index\.html$/, "");
   const navigationAnchors = [];
 
