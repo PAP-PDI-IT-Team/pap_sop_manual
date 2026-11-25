@@ -189,9 +189,7 @@
         );
         const activeFragmentTarget = findVisibleFragmentTarget();
         const activeHeading =
-          pendingTarget?.heading ||
-          activeFragmentTarget ||
-          visibleHeadings[0];
+          pendingTarget?.heading || activeFragmentTarget || visibleHeadings[0];
 
         if (activeHeading) {
           highlightTarget(activeHeading.id);

@@ -75,7 +75,9 @@
       const contentsListItem = contentsLink.closest("li");
 
       if (!(targetHeading instanceof HTMLElement)) {
-        throw new Error(`The glossary contents link target "${targetId}" is missing.`);
+        throw new Error(
+          `The glossary contents link target "${targetId}" is missing.`,
+        );
       }
 
       if (!(contentsListItem instanceof HTMLLIElement)) {
