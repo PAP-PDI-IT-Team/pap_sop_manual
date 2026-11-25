@@ -2,7 +2,11 @@
   const contentsContainers = document.querySelectorAll("[data-toc]");
   const headingElements = Array.from(
     document.querySelectorAll("main h2, main h3"),
-  ).filter((heading) => !heading.closest("aside"));
+  ).filter(
+    (heading) =>
+      !heading.closest("aside") &&
+      !(heading.tagName === "H3" && heading.closest("[data-topic-navigation]")),
+  );
 
   const createHeadingId = (heading, usedIds) => {
     const headingLabel = (heading.textContent || "").trim();
