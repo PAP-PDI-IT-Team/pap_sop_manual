@@ -2,6 +2,33 @@
 
 Record meaningful changes here. Date released versions when they are approved.
 
+## [1.0.7] - 2026-11-25
+
+### Fixed
+
+- Use the GitHub Pages upload and deployment action versions documented for a single-job workflow.
+
+## [1.0.6]
+
+### Updated
+
+- Added stable numbered glossary anchors and superscript links on manual pages.
+- Synced the Markdown and rendered glossaries to the supplied term list, retaining IT as #4 for existing references and keeping numbered entries in order.
+- Kept the Glossary table of contents synchronized with search and category filters.
+- Kept a clicked table-of-contents target active while smooth scrolling settles, preventing active-link flicker.
+- Matched the Glossary page to the shared documentation layout and added Glossary links beside Home in inner-page headers.
+- Added a responsive glossary with search and category filters.
+- Centered the IT SOP Manual footer branding above the copyright notice and removed footer navigation links.
+- Added a shared search dialog with page and heading results and Ctrl/Cmd+K support across the homepage and documentation pages.
+- Rebuilt the mobile navigation as a left slide-in drawer with grouped sections, an active-page highlight, and "Soon" badges for pages not yet available.
+- Added a desktop documentation layout to the Manual Contents and Content Template Sample pages: a left sidebar with grouped page links and an "On this page" list that highlights the section being read.
+- Built the sidebar and the mobile drawer from one shared list in `shared/scripts/site-nav.js`, so a new page is added in one place.
+- Show the mobile menu button and drawer below the large breakpoint, where the sidebar takes over.
+- Added the mobile navigation to the Content Template Sample page.
+- Moved the drawer slide, backdrop fade, and section scroll offset into Tailwind classes.
+
+## [1.0.5]
+
 ## [1.0.6]
 
 ### Updated
