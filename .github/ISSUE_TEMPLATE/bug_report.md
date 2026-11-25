@@ -2,8 +2,8 @@
 name: Bug report
 about: Report a site behavior or display problem
 title: "[Bug] "
-labels: ''
-assignees: ''
+labels: ""
+assignees: ""
 ---
 
 ## Problem

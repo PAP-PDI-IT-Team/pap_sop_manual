@@ -2,7 +2,11 @@
   const contentsContainers = document.querySelectorAll("[data-toc]");
   const headingElements = Array.from(
     document.querySelectorAll("main h2, main h3"),
-  ).filter((heading) => !heading.closest("aside"));
+  ).filter(
+    (heading) =>
+      !heading.closest("aside") &&
+      !(heading.tagName === "H3" && heading.closest("[data-topic-navigation]")),
+  );
 
   const createHeadingId = (heading, usedIds) => {
     const headingLabel = (heading.textContent || "").trim();
@@ -129,23 +133,46 @@
     return targetBounds.bottom > 96 && targetBounds.top < activeRegionBottom;
   };
 
-  const findVisibleFragmentTarget = () => {
-    const fragmentTargetId = window.location.hash.slice(1);
-    const fragmentTarget = contentsTargets.find(
+  const findFragmentTarget = (fragmentTargetId) => {
+    const exactTarget = contentsTargets.find(
       ({ heading }) => heading.id === fragmentTargetId,
     );
 
-    if (!fragmentTarget) {
+    if (exactTarget) {
+      return exactTarget;
+    }
+
+    const fragmentElement = document.getElementById(fragmentTargetId);
+
+    if (!fragmentElement) {
       return;
     }
 
-    return isHeadingInActiveRegion(fragmentTarget.heading)
+    // A heading hidden from the contents belongs to the closest tracked
+    // heading before it.
+    return contentsTargets.findLast(({ heading }) =>
+      Boolean(
+        heading.compareDocumentPosition(fragmentElement) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+      ),
+    );
+  };
+
+  const findVisibleFragmentTarget = () => {
+    const fragmentTargetId = window.location.hash.slice(1);
+    const fragmentTarget = findFragmentTarget(fragmentTargetId);
+    const fragmentElement = document.getElementById(fragmentTargetId);
+
+    if (!fragmentTarget || !fragmentElement) {
+      return;
+    }
+
+    return isHeadingInActiveRegion(fragmentElement)
       ? fragmentTarget.heading
       : undefined;
   };
 
-  contentsLinks.forEach(highlightClickedTarget);
-  document.addEventListener("scrollend", () => {
+  const handleScrollEnd = () => {
     pendingTargetId = "";
 
     const activeFragmentTarget = findVisibleFragmentTarget();
@@ -153,12 +180,27 @@
     if (activeFragmentTarget) {
       highlightTarget(activeFragmentTarget.id);
     }
-  });
+  };
 
-  const initialTargetId = window.location.hash.slice(1);
-  const initialTarget = contentsTargets.find(
-    ({ heading }) => heading.id === initialTargetId,
-  );
+  contentsLinks.forEach(highlightClickedTarget);
+
+  if ("onscrollend" in window) {
+    document.addEventListener("scrollend", handleScrollEnd);
+  } else {
+    // No scrollend here: 150ms without scroll events counts as the end.
+    let scrollTimer;
+
+    document.addEventListener(
+      "scroll",
+      () => {
+        window.clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(handleScrollEnd, 150);
+      },
+      { passive: true },
+    );
+  }
+
+  const initialTarget = findFragmentTarget(window.location.hash.slice(1));
 
   highlightTarget(
     initialTarget ? initialTarget.heading.id : contentsTargets[0].heading.id,
