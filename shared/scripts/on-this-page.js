@@ -50,6 +50,7 @@
   const activeClasses = ["border-blue-600", "font-semibold", "text-blue-700"];
   const nestedClass = "ml-3";
   const contentsLinks = [];
+  let pendingTargetId = "";
 
   contentsContainers.forEach((container) => {
     const listElement = document.createElement("ul");
@@ -104,6 +105,56 @@
     });
   };
 
+  const highlightClickedTarget = ({ anchor, targetId }) => {
+    anchor.addEventListener("click", () => {
+      const clickedTarget = contentsTargets.find(
+        ({ heading }) => heading.id === targetId,
+      );
+
+      if (!clickedTarget) {
+        throw new Error(`The contents link target "${targetId}" is missing.`);
+      }
+
+      pendingTargetId = isHeadingInActiveRegion(clickedTarget.heading)
+        ? ""
+        : targetId;
+      highlightTarget(targetId);
+    });
+  };
+
+  const isHeadingInActiveRegion = (heading) => {
+    const targetBounds = heading.getBoundingClientRect();
+    const activeRegionBottom = window.innerHeight * 0.35;
+
+    return targetBounds.bottom > 96 && targetBounds.top < activeRegionBottom;
+  };
+
+  const findVisibleFragmentTarget = () => {
+    const fragmentTargetId = window.location.hash.slice(1);
+    const fragmentTarget = contentsTargets.find(
+      ({ heading }) => heading.id === fragmentTargetId,
+    );
+
+    if (!fragmentTarget) {
+      return;
+    }
+
+    return isHeadingInActiveRegion(fragmentTarget.heading)
+      ? fragmentTarget.heading
+      : undefined;
+  };
+
+  contentsLinks.forEach(highlightClickedTarget);
+  document.addEventListener("scrollend", () => {
+    pendingTargetId = "";
+
+    const activeFragmentTarget = findVisibleFragmentTarget();
+
+    if (activeFragmentTarget) {
+      highlightTarget(activeFragmentTarget.id);
+    }
+  });
+
   const initialTargetId = window.location.hash.slice(1);
   const initialTarget = contentsTargets.find(
     ({ heading }) => heading.id === initialTargetId,
@@ -133,7 +184,14 @@
             );
           },
         );
-        const activeHeading = visibleHeadings[0];
+        const pendingTarget = contentsTargets.find(
+          ({ heading }) => heading.id === pendingTargetId,
+        );
+        const activeFragmentTarget = findVisibleFragmentTarget();
+        const activeHeading =
+          pendingTarget?.heading ||
+          activeFragmentTarget ||
+          visibleHeadings[0];
 
         if (activeHeading) {
           highlightTarget(activeHeading.id);

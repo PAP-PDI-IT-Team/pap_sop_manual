@@ -9,6 +9,9 @@
   const categorySections = Array.from(
     document.querySelectorAll("[data-glossary-category-section]"),
   );
+  const contentsLinks = Array.from(
+    document.querySelectorAll("[data-toc] a[href^='#']"),
+  );
   const resultsMessage = document.getElementById("glossary-results");
   const emptyMessage = document.getElementById("glossary-empty");
 
@@ -18,7 +21,8 @@
     !(emptyMessage instanceof HTMLParagraphElement) ||
     categoryButtons.length === 0 ||
     glossaryEntries.length === 0 ||
-    categorySections.length === 0
+    categorySections.length === 0 ||
+    contentsLinks.length === 0
   ) {
     throw new Error("Glossary search controls or entries are missing.");
   }
@@ -63,6 +67,29 @@
       ).some((glossaryEntry) => !glossaryEntry.hidden);
 
       categorySection.hidden = !sectionHasVisibleEntries;
+    });
+
+    contentsLinks.forEach((contentsLink) => {
+      const targetId = contentsLink.hash.slice(1);
+      const targetHeading = document.getElementById(targetId);
+      const contentsListItem = contentsLink.closest("li");
+
+      if (!(targetHeading instanceof HTMLElement)) {
+        throw new Error(`The glossary contents link target "${targetId}" is missing.`);
+      }
+
+      if (!(contentsListItem instanceof HTMLLIElement)) {
+        throw new Error("A glossary contents link is missing its list item.");
+      }
+
+      const isEntryHidden = Boolean(
+        targetHeading.closest("[data-glossary-entry]")?.hidden,
+      );
+      const isCategoryHidden = Boolean(
+        targetHeading.closest("[data-glossary-category-section]")?.hidden,
+      );
+
+      contentsListItem.hidden = isEntryHidden || isCategoryHidden;
     });
 
     const termLabel = visibleEntryCount === 1 ? "term" : "terms";
