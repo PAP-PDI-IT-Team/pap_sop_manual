@@ -28,10 +28,93 @@
           path: "pages/information-documentation/index.html",
           matchPathOnly: true,
         },
+        { label: "Documentation", path: "docs/README.md" },
+        { label: "Rules", path: "docs/README.md#rules" },
+        { label: "Conventions", path: "docs/README.md#conventions" },
+        { label: "Redirections", path: "docs/README.md#redirections" },
+        { label: "Glossary", path: "docs/glossary.md" },
         {
-          label: "Glossary",
-          path: "pages/glossary/index.html",
-          matchPathOnly: true,
+          label: "Requests and ownership",
+          path: "docs/glossary.md#requests-and-ownership",
+        },
+        {
+          label: "Development and validation",
+          path: "docs/glossary.md#development-and-validation",
+        },
+        {
+          label: "Information and documentation",
+          path: "docs/glossary.md#information-and-documentation",
+        },
+        { label: "Structure", path: "docs/structure.md" },
+      ],
+      sections: [
+        {
+          title: "Implementation Workflow",
+          links: [
+            {
+              label: "Workflow",
+              path: "docs/processes/jo-implementation-workflow.md#workflow",
+            },
+            {
+              label: "Delivery steps",
+              path: "docs/processes/jo-implementation-workflow.md#delivery-steps",
+            },
+            {
+              label: "Delivery responsibilities",
+              path: "docs/processes/jo-implementation-workflow.md#delivery-responsibilities",
+            },
+            {
+              label: "Details to verify",
+              path: "pages/development-validation/index.html#details-to-verify",
+            },
+            {
+              label: "Other request types",
+              path: "docs/processes/jo-implementation-workflow.md#other-request-types",
+            },
+          ],
+        },
+        {
+          title: "Job Order Creation",
+          links: [
+            {
+              label: "Preparation and handover",
+              path: "docs/processes/job-order-creation.md#preparation-and-handover",
+            },
+            {
+              label: "Details to verify",
+              path: "docs/processes/job-order-creation.md#details-to-verify",
+            },
+          ],
+        },
+        {
+          title: "Version Control Practice",
+          links: [
+            {
+              label: "Branch flow",
+              path: "docs/processes/ac-local/version-control-practice.md#branch-flow",
+            },
+            {
+              label: "Working with changes",
+              path: "docs/processes/ac-local/version-control-practice.md#working-with-changes",
+            },
+            {
+              label: "Details to verify",
+              path: "pages/development-validation/index.html#details-to-verify-2",
+            },
+          ],
+        },
+        {
+          title: "List of Teams:",
+          links: [
+            {
+              label: "Assessment Center Team:",
+              path: "docs/team_records/team-list.md#assessment-center-team",
+            },
+            {
+              label: "DiskFlow Team:",
+              path: "docs/team_records/team-list.md#diskflow-team",
+            },
+          ],
         },
       ],
     },
@@ -44,7 +127,10 @@
     "block rounded-lg bg-blue-50 px-4 py-2.5 font-semibold text-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700";
   window.siteScripts = window.siteScripts || {};
   window.siteScripts.navigationItems = navigationGroups.flatMap((group) =>
-    group.links.map((link) => ({
+    [
+      ...(group.links || []),
+      ...(group.sections || []).flatMap((section) => section.links),
+    ].map((link) => ({
       label: link.label,
       url: new URL(link.path, rootUrl).href,
     })),
@@ -83,8 +169,29 @@
     );
 
     section.append(createElementWithClass("h3", headingClass, group.title));
-    group.links.forEach((link) => listElement.append(buildLinkItem(link)));
+    (group.links || []).forEach((link) =>
+      listElement.append(buildLinkItem(link)),
+    );
     section.append(listElement);
+
+    (group.sections || []).forEach((subsection) => {
+      section.append(
+        createElementWithClass(
+          "h3",
+          "mt-4 px-4 pb-1 text-sm font-semibold text-slate-500",
+          subsection.title,
+        ),
+      );
+      const subsectionList = createElementWithClass(
+        "ul",
+        "mt-1 flex flex-col gap-1",
+      );
+      subsection.links.forEach((link) =>
+        subsectionList.append(buildLinkItem(link)),
+      );
+      section.append(subsectionList);
+    });
+
     return section;
   };
 
@@ -94,8 +201,9 @@
 
     navigationAnchors.forEach(({ anchor, link, linkUrl }) => {
       const isCurrentPath = normalizePath(linkUrl.pathname) === currentPath;
-      const isCurrentLink = linkUrl.hash
-        ? window.location.hash === linkUrl.hash
+      const isCurrentLink =
+        linkUrl.hash ?
+          window.location.hash === linkUrl.hash
         : link.matchPathOnly || !hasCurrentHash;
 
       anchor.className =
