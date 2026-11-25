@@ -6,6 +6,10 @@ Record meaningful changes here. Date released versions when they are approved.
 
 ### Updated
 
+- Added stable numbered glossary anchors and superscript links on manual pages.
+- Synced the Markdown and rendered glossaries to the supplied term list, retaining IT as #4 for existing references and keeping numbered entries in order.
+- Kept the Glossary table of contents synchronized with search and category filters.
+- Kept a clicked table-of-contents target active while smooth scrolling settles, preventing active-link flicker.
 - Matched the Glossary page to the shared documentation layout and added Glossary links beside Home in inner-page headers.
 - Added a responsive glossary with search and category filters.
 - Centered the IT SOP Manual footer branding above the copyright notice and removed footer navigation links.
