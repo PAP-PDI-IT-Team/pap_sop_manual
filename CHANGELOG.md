@@ -2,6 +2,15 @@
 
 Record meaningful changes here. Date released versions when they are approved.
 
+## [1.0.9]
+
+### Fixed
+
+- Fixed table-of-contents highlighting for deep links targeting hidden headings inside [data-topic-navigation] by mapping them to the closest preceding listed heading.
+- Applied hidden-heading fragment mapping to both initial highlighting and scroll tracking.
+- Added a 150ms scroll-idle fallback for browsers that do not support the scrollend event.
+- Cleared pending clicked targets after scrolling settles so the active TOC highlight correctly follows manual scrolling.
+
 ## [1.0.8]
 
 - Refactored static.yml
