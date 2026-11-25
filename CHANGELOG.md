@@ -2,11 +2,15 @@
 
 Record meaningful changes here. Date released versions when they are approved.
 
+## [1.0.8]
+
+- Refactored static.yml
+
 ## [1.0.7] - 2026-11-25
 
 ### Fixed
 
-- Use the GitHub Pages upload and deployment action versions documented for a single-job workflow.
+- Use the GitHub Pages v4 upload and deployment actions in separate jobs so deployment starts after the artifact upload job completes.
 
 ## [1.0.6]
 
