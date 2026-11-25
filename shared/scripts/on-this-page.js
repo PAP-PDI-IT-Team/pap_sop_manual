@@ -119,8 +119,9 @@
         throw new Error(`The contents link target "${targetId}" is missing.`);
       }
 
-      pendingTargetId =
-        isHeadingInActiveRegion(clickedTarget.heading) ? "" : targetId;
+      pendingTargetId = isHeadingInActiveRegion(clickedTarget.heading)
+        ? ""
+        : targetId;
       highlightTarget(targetId);
     });
   };
@@ -166,8 +167,8 @@
       return;
     }
 
-    return isHeadingInActiveRegion(fragmentElement) ?
-        fragmentTarget.heading
+    return isHeadingInActiveRegion(fragmentElement)
+      ? fragmentTarget.heading
       : undefined;
   };
 
