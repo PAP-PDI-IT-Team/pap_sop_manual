@@ -2,8 +2,8 @@
 name: Feature request
 about: Propose a site improvement with a clear scope
 title: "[Feature] "
-labels: ""
-assignees: ""
+labels: ''
+assignees: ''
 ---
 
 ## Need

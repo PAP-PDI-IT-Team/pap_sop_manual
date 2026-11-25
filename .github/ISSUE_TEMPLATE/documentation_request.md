@@ -2,8 +2,8 @@
 name: Documentation or SOP request
 about: Request a new procedure or correct an existing one
 title: "[Docs] "
-labels: ""
-assignees: ""
+labels: ''
+assignees: ''
 ---
 
 ## Procedure or page
