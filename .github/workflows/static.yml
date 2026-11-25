@@ -45,7 +45,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
-          cp -R assets pages _site/
+          cp -R assets pages shared _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
