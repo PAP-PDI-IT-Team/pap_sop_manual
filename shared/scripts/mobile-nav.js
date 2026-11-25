@@ -21,6 +21,7 @@ window.siteScripts.initializeMobileNavigation = (
     }
 
     navigationToggle.setAttribute("aria-expanded", "false");
+    restoreToggleFocus = true;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       navigationSheet.close();
@@ -66,8 +67,15 @@ window.siteScripts.initializeMobileNavigation = (
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && navigationSheet.open) {
       event.preventDefault();
-      restoreToggleFocus = true;
       closeNavigationSheet();
     }
   });
+
+  window
+    .matchMedia("(min-width: 48rem)")
+    .addEventListener("change", (event) => {
+      if (event.matches && navigationSheet.open) {
+        navigationSheet.close();
+      }
+    });
 };
