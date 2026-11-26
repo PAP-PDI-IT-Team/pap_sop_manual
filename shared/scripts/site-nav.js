@@ -201,8 +201,9 @@
 
     navigationAnchors.forEach(({ anchor, link, linkUrl }) => {
       const isCurrentPath = normalizePath(linkUrl.pathname) === currentPath;
-      const isCurrentLink = linkUrl.hash
-        ? window.location.hash === linkUrl.hash
+      const isCurrentLink =
+        linkUrl.hash ?
+          window.location.hash === linkUrl.hash
         : link.matchPathOnly || !hasCurrentHash;
 
       anchor.className =

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth scrollbar-hidden">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -95,7 +95,10 @@
       class="mx-auto grid max-w-[90rem] grid-cols-1 gap-x-8 px-6 lg:grid-cols-[14rem_minmax(0,1fr)_12rem]"
     >
       <aside class="hidden lg:block">
-        <div class="sticky top-24 py-10 pr-2">
+        <div
+          class="scrollbar-hidden sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto overscroll-contain py-6 pr-3"
+          tabindex="0"
+        >
           <nav
             aria-label="Site sections"
             data-site-nav
@@ -103,6 +106,7 @@
           ></nav>
         </div>
       </aside>
+
       <main id="main" class="min-w-0 py-8">
         <div class="max-w-4xl">
           <div
