@@ -16,6 +16,8 @@ Record meaningful changes here. Date released versions when they are approved.
 
 ### Updated
 
+- Moved the SOP template sample link from the footer into the landing-page feature cards.
+- Added feature cards for all pages in the manual table of contents.
 - Renamed the product display name to PAP SOP Manual across the site and documentation.
 - Applied consistent sidebar scrolling behavior to Glossary, Requests and Ownership, Development and Validation, and Information and Documentation.
 - Added a shared Back to top link on all documentation pages, positioned above the mobile navigation control and revealed after scrolling down.
