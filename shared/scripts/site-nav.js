@@ -372,6 +372,64 @@
   const sidebarScrollContainer = document.querySelector(
     ".site-sidebar .scrollbar-hidden",
   );
+  const sidebar = document.querySelector(".site-sidebar");
+
+  if (sidebar) {
+    if (!sidebarScrollContainer) {
+      throw new Error("The desktop sidebar scroll container is missing.");
+    }
+
+    const pageFooter = document.querySelector("footer");
+
+    if (!(pageFooter instanceof HTMLElement)) {
+      throw new Error("The documentation page footer is missing.");
+    }
+
+    const updateSidebarFooterPosition = (updatePanelGeometry = false) => {
+      const footerBounds = pageFooter.getBoundingClientRect();
+      const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
+      const isFooterVisible =
+        footerBounds.top < window.innerHeight && footerBounds.bottom > 0;
+      const isFooterPinned = sidebar.classList.contains("is-footer-pinned");
+
+      if (
+        isDesktop &&
+        isFooterVisible &&
+        (!isFooterPinned || updatePanelGeometry)
+      ) {
+        const sidebarBounds = sidebar.getBoundingClientRect();
+        const sidebarStyles = window.getComputedStyle(sidebar);
+        const panelStyles = window.getComputedStyle(sidebarScrollContainer);
+        const sidebarPaddingLeft = parseFloat(sidebarStyles.paddingLeft);
+        const sidebarPaddingRight = parseFloat(sidebarStyles.paddingRight);
+        const panelTop = parseFloat(panelStyles.top);
+
+        sidebar.style.setProperty(
+          "--site-sidebar-panel-left",
+          `${sidebarBounds.left + sidebarPaddingLeft}px`,
+        );
+        sidebar.style.setProperty(
+          "--site-sidebar-panel-width",
+          `${sidebar.clientWidth - sidebarPaddingLeft - sidebarPaddingRight}px`,
+        );
+        sidebar.style.setProperty(
+          "--site-sidebar-panel-height",
+          `${Math.max(0, footerBounds.top - panelTop)}px`,
+        );
+      }
+
+      sidebar.classList.toggle(
+        "is-footer-pinned",
+        isDesktop && isFooterVisible,
+      );
+    };
+
+    updateSidebarFooterPosition();
+    window.addEventListener("scroll", updateSidebarFooterPosition, {
+      passive: true,
+    });
+    window.addEventListener("resize", () => updateSidebarFooterPosition(true));
+  }
 
   if (sidebarScrollContainer) {
     sidebarScrollContainer.addEventListener("click", (event) => {

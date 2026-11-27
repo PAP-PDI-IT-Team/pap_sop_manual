@@ -7,10 +7,12 @@ Record meaningful changes here. Date released versions when they are approved.
 ### Fixed
 
 - Improved sidebar navigation scrolling across documentation pages.
+- Kept the desktop sidebar available and scrollable while the footer is in view.
 - Added independent scrolling to the left sidebar to prevent it from extending beyond the viewport.
 - Hid visible sidebar scrollbars while preserving scrolling functionality.
 - Prevented sidebar scrolling from affecting the main content area.
 - Removed the global scrollbar-hiding class to preserve the main page scrollbar.
+- Re-added a direct Glossary link to the landing page navigation.
 
 ### Updated
 

@@ -88,6 +88,17 @@ html {
     background: #ffffff;
   }
 
+  .site-sidebar.is-footer-pinned > .scrollbar-hidden {
+    position: fixed;
+    z-index: 10;
+    top: 6rem;
+    left: var(--site-sidebar-panel-left);
+    height: var(--site-sidebar-panel-height);
+    max-height: none;
+    width: var(--site-sidebar-panel-width);
+    background: #ffffff;
+  }
+
   .site-nav-desktop {
     display: flex;
     flex-direction: column;
