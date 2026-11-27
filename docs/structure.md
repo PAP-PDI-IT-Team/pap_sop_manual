@@ -5,6 +5,7 @@ Each top-level entry in the [table of contents](table_of_content.md) has one pag
 ```text
 pages/
 |-- documentation/index.html
+|-- sop-template/index.html
 |-- glossary/index.html
 |-- structure/index.html
 |-- implementation-workflow/index.html

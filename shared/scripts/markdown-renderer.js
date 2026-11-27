@@ -8,7 +8,9 @@
 
   if (!contentElement) return;
 
-  const documentPath = new URLSearchParams(window.location.search).get("doc");
+  const documentPath =
+    new URLSearchParams(window.location.search).get("doc") ||
+    document.body.dataset.documentPath;
 
   const showError = (message) => {
     contentElement.innerHTML = "";
@@ -116,6 +118,7 @@
 
       const firstHeading = contentElement.querySelector("h1");
       const title =
+        document.body.dataset.documentTitle ||
         firstHeading?.textContent.trim() ||
         documentPath
           .split("/")
@@ -129,6 +132,7 @@
       if (breadcrumbElement) breadcrumbElement.textContent = title;
       if (descriptionElement) {
         descriptionElement.textContent =
+          document.body.dataset.documentDescription ||
           "Documentation and reference materials.";
       }
 

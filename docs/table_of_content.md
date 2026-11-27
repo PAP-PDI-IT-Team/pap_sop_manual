@@ -5,6 +5,8 @@
   - [Conventions](README.md#conventions)
   - [Redirections](README.md#redirections)
 
+- [SOP Template](sop-template.md)
+
 - [Glossary](glossary.md)
   - [Requests and ownership](glossary.md#requests-and-ownership)
   - [Development and validation](glossary.md#development-and-validation)

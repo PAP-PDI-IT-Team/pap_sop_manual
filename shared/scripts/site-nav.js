@@ -21,6 +21,11 @@
           matchPathOnly: true,
         },
         {
+          label: "SOP Template",
+          path: "pages/sop-template/index.html",
+          documentPath: "docs/sop-template.md",
+        },
+        {
           label: "Glossary",
           path: "pages/glossary/index.html",
           matchPathOnly: true,

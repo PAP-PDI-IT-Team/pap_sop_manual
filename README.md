@@ -48,7 +48,7 @@ Process owners must approve operational content. Interns should use sanitized ex
 - [Version Control Practice](pages/version-control-practice/index.html)
 - [List of Teams](pages/list-of-teams/index.html)
 - [Draft AC Local workflow](docs/ac-local-deployment.md)
-- [Reusable procedure template](docs/sop-template.md)
+- [Reusable procedure template](pages/sop-template/index.html)
 - [Design system](docs/design/design-system.md)
 - [Security policy](SECURITY.md)
 - [License status](LICENSE.md)
