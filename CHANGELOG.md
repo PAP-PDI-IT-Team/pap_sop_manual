@@ -14,6 +14,7 @@ Record meaningful changes here. Date released versions when they are approved.
 
 ### Updated
 
+- Renamed the product display name to PAP SOP Manual across the site and documentation.
 - Applied consistent sidebar scrolling behavior to Glossary, Requests and Ownership, Development and Validation, and Information and Documentation.
 - Added a shared Back to top link on all documentation pages, positioned above the mobile navigation control and revealed after scrolling down.
 - Kept the header visible and sharp while blurring page content behind the shared search dialog.
@@ -47,7 +48,7 @@ Record meaningful changes here. Date released versions when they are approved.
 - Kept a clicked table-of-contents target active while smooth scrolling settles, preventing active-link flicker.
 - Matched the Glossary page to the shared documentation layout and added Glossary links beside Home in inner-page headers.
 - Added a responsive glossary with search and category filters.
-- Centered the IT SOP Manual footer branding above the copyright notice and removed footer navigation links.
+- Centered the PAP SOP Manual footer branding above the copyright notice and removed footer navigation links.
 - Added a shared search dialog with page and heading results and Ctrl/Cmd+K support across the homepage and documentation pages.
 - Rebuilt the mobile navigation as a left slide-in drawer with grouped sections, an active-page highlight, and "Soon" badges for pages not yet available.
 - Added a desktop documentation layout to the Manual Contents and Content Template Sample pages: a left sidebar with grouped page links and an "On this page" list that highlights the section being read.
@@ -66,7 +67,7 @@ Record meaningful changes here. Date released versions when they are approved.
 - Kept a clicked table-of-contents target active while smooth scrolling settles, preventing active-link flicker.
 - Matched the Glossary page to the shared documentation layout and added Glossary links beside Home in inner-page headers.
 - Added a responsive glossary with search and category filters.
-- Centered the IT SOP Manual footer branding above the copyright notice and removed footer navigation links.
+- Centered the PAP SOP Manual footer branding above the copyright notice and removed footer navigation links.
 - Added a shared search dialog with page and heading results and Ctrl/Cmd+K support across the homepage and documentation pages.
 - Rebuilt the mobile navigation as a left slide-in drawer with grouped sections, an active-page highlight, and "Soon" badges for pages not yet available.
 - Added a desktop documentation layout to the Manual Contents and Content Template Sample pages: a left sidebar with grouped page links and an "On this page" list that highlights the section being read.
@@ -88,7 +89,7 @@ Record meaningful changes here. Date released versions when they are approved.
 
 ## [1.0.3]
 
-- Added the IT SOP Manual landing page with a skip link, hero, three resource cards, and Contributors section.
+- Added the PAP SOP Manual landing page with a skip link, hero, three resource cards, and Contributors section.
 - Added shared header and footer navigation, including a mobile menu, with links to the page sections.
 - Added a mobile-first layout with stacked buttons, larger tap targets, and full-width footer links.
 - Updated color tokens to a blue and cyan palette with brand tokens for light and dark themes.

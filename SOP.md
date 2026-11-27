@@ -1,4 +1,4 @@
-# SOP: Maintaining the IT SOP Manual
+# SOP: Maintaining the PAP SOP Manual
 
 Status: Draft — requires IT team approval before adoption.
 

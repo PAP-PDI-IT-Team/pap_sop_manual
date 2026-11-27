@@ -135,10 +135,10 @@
 
   if (!searchItems.length) {
     searchItems.push({
-      label: "IT SOP Manual",
+      label: "PAP SOP Manual",
       description: "Page",
-      searchText: "IT SOP Manual Home",
-      preview: "IT SOP Manual",
+      searchText: "PAP SOP Manual Home",
+      preview: "PAP SOP Manual",
       url: new URL("index.html", document.baseURI).href,
     });
   }
@@ -279,7 +279,7 @@
       const pageTitle =
         pageDocument.querySelector("h1")?.textContent?.trim() ||
         pageDocument.title ||
-        "IT SOP Manual";
+        "PAP SOP Manual";
       const matchedNavigationItem = searchItems.find(
         (item) => item.url === pageUrl,
       );

@@ -1,4 +1,4 @@
-﻿# IT SOP Manual
+﻿# PAP SOP Manual
 
 A simple alignment site for IT standard operating procedures, project scope, and collaboration with other departments. This IT initiative also serves as a project for Senior High School interns from Rizal High.
 
