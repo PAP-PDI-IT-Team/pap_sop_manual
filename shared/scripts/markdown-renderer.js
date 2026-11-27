@@ -135,6 +135,14 @@
       document.title = `${title} | PAP SOP Manual`;
 
       document.dispatchEvent(new CustomEvent("markdown:rendered"));
+
+      const fragmentTarget = document.getElementById(
+        window.location.hash.slice(1),
+      );
+
+      if (fragmentTarget) {
+        fragmentTarget.scrollIntoView();
+      }
     } catch (error) {
       console.error("Markdown rendering failed:", error);
       showError(

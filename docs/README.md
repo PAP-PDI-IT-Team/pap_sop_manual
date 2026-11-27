@@ -21,7 +21,7 @@
 - Keep process references in `docs/processes/` and unresolved questions under “Details to verify” in the owning document. Keep draft status until the procedure is validated and approved.
 - Treat `.github/` as repository collaboration configuration. GitHub recognizes these template locations when the repository is hosted there.
 
-For a new SOP page, use [the SOP content template](sop-template.md) and the [template sample](../pages/content-template-sample/index.html) as layout references. Keep process details tied to their source document and mark unverified information clearly.
+For a new SOP page, use [the SOP content template](sop-template.md). Keep process details tied to their source document and mark unverified information clearly.
 
 ## Redirections
 

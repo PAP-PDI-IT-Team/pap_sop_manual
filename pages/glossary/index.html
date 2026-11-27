@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Search the IT SOP Manual glossary for requests, development, validation, and documentation terms."
+      content="Search the PAP SOP Manual glossary for requests, development, validation, and documentation terms."
     />
-    <title>Glossary | IT SOP Manual</title>
+    <title>Glossary | PAP SOP Manual</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -21,6 +21,7 @@
     <script src="../../shared/scripts/site-header.js" defer></script>
     <script src="../../shared/scripts/page-actions.js" defer></script>
     <script src="../../shared/scripts/on-this-page.js" defer></script>
+    <script src="../../shared/scripts/back-to-top.js" defer></script>
     <script src="assets/script/glossary.js" defer></script>
   </head>
 
@@ -40,7 +41,7 @@
           class="bx bx-book-open text-3xl text-blue-700"
           aria-hidden="true"
         ></i>
-        <span class="text-lg font-semibold tracking-tight">IT SOP Manual</span>
+        <span class="text-lg font-semibold tracking-tight">PAP SOP Manual</span>
       </a>
 
       <nav aria-label="Primary" class="hidden md:ml-auto md:block">
@@ -125,7 +126,7 @@
                 Glossary
               </h1>
               <p class="mt-3 max-w-2xl leading-relaxed text-slate-600">
-                Find terms used across the IT SOP Manual. Unverified
+                Find terms used across the PAP SOP Manual. Unverified
                 responsibilities and procedures are called out in the
                 definitions.
               </p>
@@ -244,6 +245,7 @@
               <div id="glossary-entries" class="mt-8 space-y-10">
                 <section data-glossary-category-section="requests">
                   <h2
+                    id="requests-and-ownership"
                     class="text-2xl font-semibold tracking-tight text-slate-900"
                   >
                     Requests and Ownership
@@ -468,6 +470,7 @@
 
                 <section data-glossary-category-section="development">
                   <h2
+                    id="development-and-validation"
                     class="text-2xl font-semibold tracking-tight text-slate-900"
                   >
                     Development and Validation
@@ -753,6 +756,7 @@
 
                 <section data-glossary-category-section="information">
                   <h2
+                    id="information-and-documentation"
                     class="text-2xl font-semibold tracking-tight text-slate-900"
                   >
                     Information and Documentation
@@ -898,12 +902,21 @@
 
     <footer class="bg-slate-950 px-6 py-4 text-slate-100 sm:px-8">
       <div class="mx-auto max-w-6xl text-center">
-        <p class="text-lg font-semibold">IT SOP Manual</p>
+        <p class="text-lg font-semibold">PAP SOP Manual</p>
         <p class="mt-1 text-sm text-slate-400">Build. Align. Deliver.</p>
       </div>
       <p class="mx-auto mt-6 max-w-6xl text-center text-xs text-slate-400">
-        &copy; <span id="footer-year">2026</span> IT SOP Manual
+        &copy; <span id="footer-year">2026</span> PAP SOP Manual
       </p>
     </footer>
+    <a
+      href="#top"
+      aria-label="Back to top"
+      data-back-to-top
+      hidden
+      class="fixed bottom-24 right-6 z-30 inline-flex size-12 items-center justify-center rounded-full border border-blue-800 bg-blue-700 text-white shadow-lg transition hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 lg:bottom-6"
+    >
+      <i class="bx bx-up-arrow-alt text-2xl" aria-hidden="true"></i>
+    </a>
   </body>
 </html>

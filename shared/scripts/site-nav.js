@@ -15,38 +15,9 @@
       title: "Manual",
       links: [
         {
-          label: "Requests and ownership",
-          path: "pages/glossary/requests-and-ownership/index.html",
-          matchPathOnly: true,
-        },
-        {
-          label: "Development and validation",
-          path: "pages/glossary/development-and-validation/index.html",
-          matchPathOnly: true,
-        },
-        {
-          label: "Information and documentation",
-          path: "pages/glossary/information-and-documentation/index.html",
-          matchPathOnly: true,
-        },
-        {
           label: "Documentation",
           path: "pages/documentation/index.html",
           documentPath: "docs/README.md",
-        },
-        {
-          label: "Rules",
-          path: "pages/documentation/rules/index.html",
-          matchPathOnly: true,
-        },
-        {
-          label: "Conventions",
-          path: "pages/documentation/conventions/index.html",
-          matchPathOnly: true,
-        },
-        {
-          label: "Redirections",
-          path: "pages/documentation/redirections/index.html",
           matchPathOnly: true,
         },
         {
@@ -59,87 +30,25 @@
           path: "pages/structure/index.html",
           matchPathOnly: true,
         },
-      ],
-      sections: [
         {
-          title: "Implementation Workflow",
-          links: [
-            {
-              label: "Workflow",
-              path: "pages/implementation-workflow/workflow/index.html",
-              matchPathOnly: true,
-            },
-            {
-              label: "Delivery steps",
-              path: "pages/implementation-workflow/delivery-steps/index.html",
-              matchPathOnly: true,
-            },
-            {
-              label: "Delivery responsibilities",
-              path: "pages/implementation-workflow/delivery-responsibilities/index.html",
-              matchPathOnly: true,
-            },
-            {
-              label: "Details to verify",
-              path: "pages/implementation-workflow/details-to-verify/index.html",
-              matchPathOnly: true,
-            },
-            {
-              label: "Other request types",
-              path: "pages/implementation-workflow/other-request-types/index.html",
-              matchPathOnly: true,
-            },
-          ],
+          label: "Implementation Workflow",
+          path: "pages/implementation-workflow/index.html",
+          matchPathOnly: true,
         },
         {
-          title: "Job Order Creation",
-          links: [
-            {
-              label: "Preparation and handover",
-              path: "pages/job-order-creation/preparation-and-handover/index.html",
-              matchPathOnly: true,
-            },
-            {
-              label: "Details to verify",
-              path: "pages/job-order-creation/details-to-verify/index.html",
-              matchPathOnly: true,
-            },
-          ],
+          label: "Job Order Creation",
+          path: "pages/job-order-creation/index.html",
+          matchPathOnly: true,
         },
         {
-          title: "Version Control Practice",
-          links: [
-            {
-              label: "Branch flow",
-              path: "pages/version-control-practice/branch-flow/index.html",
-              matchPathOnly: true,
-            },
-            {
-              label: "Working with changes",
-              path: "pages/version-control-practice/working-with-changes/index.html",
-              matchPathOnly: true,
-            },
-            {
-              label: "Details to verify",
-              path: "pages/version-control-practice/details-to-verify/index.html",
-              matchPathOnly: true,
-            },
-          ],
+          label: "Version Control Practice",
+          path: "pages/version-control-practice/index.html",
+          matchPathOnly: true,
         },
         {
-          title: "List of Teams",
-          links: [
-            {
-              label: "Assessment Center Team",
-              path: "pages/list-of-teams/assessment-center-team/index.html",
-              matchPathOnly: true,
-            },
-            {
-              label: "DiskFlow Team",
-              path: "pages/list-of-teams/diskflow-team/index.html",
-              matchPathOnly: true,
-            },
-          ],
+          label: "List of Teams:",
+          path: "pages/list-of-teams/index.html",
+          matchPathOnly: true,
         },
       ],
     },
