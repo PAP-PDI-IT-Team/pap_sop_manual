@@ -28,13 +28,13 @@
     );
 
     const createHeadingId = (heading) => {
-      const slug = (heading.textContent || "")
+      const headingSlug = (heading.textContent || "")
         .trim()
         .toLowerCase()
         .replace(/[^a-z0-9]+/gu, "-")
         .replace(/^-|-$/gu, "");
 
-      const baseId = slug || "section";
+      const baseId = headingSlug || "section";
       let headingId = baseId;
       let suffix = 2;
 
@@ -176,8 +176,9 @@
 
         if (!target) return;
 
-        pendingTargetId =
-          isHeadingInActiveRegion(target.heading) ? "" : targetId;
+        pendingTargetId = isHeadingInActiveRegion(target.heading)
+          ? ""
+          : targetId;
 
         highlightTarget(targetId);
       });

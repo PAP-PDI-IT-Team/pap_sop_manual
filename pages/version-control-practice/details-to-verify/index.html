@@ -30,7 +30,6 @@
 
     <!-- Markdown renderer must load before the TOC script -->
     <script src="../../../shared/scripts/on-this-page.js" defer></script>
-    <script src="" defer></script>
     <script src="../../../shared/scripts/back-to-top.js" defer></script>
   </head>
 
@@ -160,10 +159,21 @@
 
           <!-- Markdown content -->
           <article class="markdown-content min-w-0">
-            <p>
-              The branch and approval practices need confirmation before
-              adoption.
-            </p>
+            <h2>Questions to confirm</h2>
+            <ul>
+              <li>
+                Confirm the branch and merge practices for dev, main,
+                pre-release, and preprod before adopting the reported flow.
+              </li>
+              <li>
+                Confirm who may approve a production-targeting pull request and
+                who is responsible for the final merge.
+              </li>
+              <li>
+                Confirm the evidence required for ASD acceptance, production
+                checks, and job-order closure.
+              </li>
+            </ul>
           </article>
         </div>
       </main>
@@ -192,7 +202,7 @@
         &copy; <span id="footer-year">2026</span> PAP SOP Manual
       </p>
     </footer>
-      <a
+    <a
       href="#top"
       aria-label="Back to top"
       data-back-to-top

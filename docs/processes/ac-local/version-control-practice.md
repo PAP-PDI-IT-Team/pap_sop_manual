@@ -30,4 +30,6 @@ For QA, huddles, live checks, and closure, see the [implementation workflow](../
 
 ## Details to verify
 
-The branch and approval practices need confirmation before adoption.
+- Confirm the branch and merge practices for dev, main, pre-release, and preprod before adopting the reported flow.
+- Confirm who may approve a production-targeting pull request and who is responsible for the final merge.
+- Confirm the evidence required for ASD acceptance, production checks, and job-order closure.

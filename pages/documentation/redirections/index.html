@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +9,7 @@
       content="PAP SOP Manual documentation and reference materials."
     />
 
-    <title>Rules | PAP SOP Manual</title>
+    <title>Redirections | PAP SOP Manual</title>
 
     <link
       rel="stylesheet"
@@ -30,7 +30,6 @@
 
     <!-- Markdown renderer must load before the TOC script -->
     <script src="../../../shared/scripts/on-this-page.js" defer></script>
-    <script src="" defer></script>
     <script src="../../../shared/scripts/back-to-top.js" defer></script>
   </head>
 
@@ -121,7 +120,7 @@
 
             <span class="mx-2">/</span>
 
-            <span id="document-breadcrumb">Rules</span>
+            <span id="document-breadcrumb">Redirections</span>
           </div>
 
           <!-- Document information -->
@@ -136,7 +135,7 @@
               id="document-title"
               class="text-3xl font-bold tracking-tight text-slate-900"
             >
-              Rules
+              Redirections
             </h1>
 
             <p
@@ -160,61 +159,29 @@
 
           <!-- Markdown content -->
           <article class="markdown-content min-w-0">
-            <ul>
-              <li>
-                Write for the role using the document. Keep entry pages brief;
-                place necessary detail in the owning topic.
-              </li>
-              <li>
-                Centralize document titles and subtitles in the
-                <a
-                  href="../documentation/index.html?doc=docs%2Ftable_of_content.md"
-                  >table of contents</a
-                >. Link to its relevant section instead of maintaining duplicate
-                document lists (<a
-                  href="../documentation/index.html?doc=docs%2Fglossary.md#28-dry"
-                  >DRY [28]</a
-                >).
-              </li>
-              <li>
-                Centralize jargon definitions in the
-                <a href="../documentation/index.html?doc=docs%2Fglossary.md"
-                  >glossary</a
-                >, grouped by concern. Give each entry a stable number; link the
-                first prose use of a term in each document to its numbered
-                entry, for example
-                <a
-                  href="../documentation/index.html?doc=docs%2Fglossary.md#1-jo"
-                  >JO [1]</a
-                >. Do not repeat definitions across documents (DRY).
-              </li>
-              <li>
-                Keep rules and redirections here, directory layout in
-                <a href="../documentation/index.html?doc=docs%2Fstructure.md"
-                  >structure</a
-                >, navigation in the table of contents, terminology in the
-                glossary, and operational details in their owning topics (<a
-                  href="../documentation/index.html?doc=docs%2Fglossary.md#29-soc"
-                  >SoC [29]</a
-                >).
-              </li>
-              <li>
-                Add Mermaid diagrams when documenting flows and handoffs. Prefer
-                <code>flowchart TD</code> so readers follow the sequence from
-                top to bottom. Preserve unknown branches and evidence
-                qualifications.
-              </li>
-              <li>
-                Keep draft and discovery status visible. Reported practice is
-                not an approved operating procedure.
-              </li>
-              <li>
-                Follow the
-                <a href="../../../SOP.md">documentation maintenance SOP</a> for
-                review. Assign a process owner and approver before adopting a
-                procedure; check any corresponding HTML summary for consistency.
-              </li>
-            </ul>
+            <p>
+              Use the
+              <a
+                href="../index.html?doc=docs%2Ftable_of_content.md"
+                >table of contents</a
+              >
+              to find a topic, the
+              <a href="../index.html?doc=docs%2Fglossary.md"
+                >glossary</a
+              >
+              to look up a term, and the
+              <a href="../index.html?doc=docs%2Fstructure.md"
+                >structure reference</a
+              >
+              to place documentation.
+            </p>
+            <pre><code class="language-mermaid">flowchart TD
+    A[Documentation] --&gt; B{Reader needs}
+    B --&gt;|Find a topic| C[Table of contents]
+    C --&gt; D[Owning document]
+    B --&gt;|Understand a term| E[Glossary]
+    B --&gt;|Place a document| F[Structure]
+</code></pre>
           </article>
         </div>
       </main>

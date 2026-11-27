@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
@@ -21,7 +21,6 @@
     <script src="../../../shared/scripts/site-header.js" defer></script>
     <script src="../../../shared/scripts/page-actions.js" defer></script>
     <script src="../../../shared/scripts/on-this-page.js" defer></script>
-    <script src="" defer></script>
     <script src="../../../shared/scripts/back-to-top.js" defer></script>
   </head>
   <body id="top" class="min-h-screen bg-white text-slate-900 antialiased">
@@ -154,6 +153,102 @@
             </summary>
             <nav aria-label="On this page" data-toc class="px-4 pb-3"></nav>
           </details>
+          <div class="mt-8 space-y-10">
+            <section aria-labelledby="shared-terms-heading">
+              <h2
+                id="shared-terms-heading"
+                class="text-xl font-semibold text-slate-900"
+              >
+                Shared terms
+              </h2>
+              <p class="mt-2 leading-relaxed text-slate-600">
+                These terms are maintained in the
+                <a
+                  href="../index.html"
+                  class="font-medium text-blue-700 underline decoration-blue-300 underline-offset-4 hover:text-blue-900"
+                  >manual glossary</a
+                >. The short descriptions below summarize the entries relevant
+                to documentation work.
+              </p>
+              <dl
+                class="mt-4 divide-y divide-slate-200 rounded-lg border border-slate-200 px-4"
+              >
+                <div class="py-4">
+                  <dt class="font-semibold text-slate-900">
+                    <a href="../index.html#25-pii">PII Â· 25</a>
+                  </dt>
+                  <dd class="mt-1 leading-relaxed text-slate-600">
+                    Information that identifies or can identify an individual.
+                  </dd>
+                </div>
+                <div class="py-4">
+                  <dt class="font-semibold text-slate-900">
+                    <a href="../index.html#26-sla">SLA Â· 26</a>
+                  </dt>
+                  <dd class="mt-1 leading-relaxed text-slate-600">
+                    An agreement about service expectations; the discovery
+                    records do not establish an SLA.
+                  </dd>
+                </div>
+                <div class="py-4">
+                  <dt class="font-semibold text-slate-900">
+                    <a href="../index.html#27-toc">TOC Â· 27</a>
+                  </dt>
+                  <dd class="mt-1 leading-relaxed text-slate-600">
+                    The centralized listing of document titles and subtitles.
+                  </dd>
+                </div>
+                <div class="py-4">
+                  <dt class="font-semibold text-slate-900">
+                    <a href="../index.html#28-dry">DRY Â· 28</a>
+                  </dt>
+                  <dd class="mt-1 leading-relaxed text-slate-600">
+                    Keep shared information in one owning location and link to
+                    it instead of repeating it.
+                  </dd>
+                </div>
+                <div class="py-4">
+                  <dt class="font-semibold text-slate-900">
+                    <a href="../index.html#29-soc">SoC Â· 29</a>
+                  </dt>
+                  <dd class="mt-1 leading-relaxed text-slate-600">
+                    Give each document a distinct purpose and keep information
+                    in its owning location.
+                  </dd>
+                </div>
+              </dl>
+            </section>
+
+            <section aria-labelledby="documentation-guide-heading">
+              <h2
+                id="documentation-guide-heading"
+                class="text-xl font-semibold text-slate-900"
+              >
+                Documentation guide
+              </h2>
+              <p class="mt-2 leading-relaxed text-slate-600">
+                Use the documentation contents to find the owning topic. Keep
+                rules and conventions in the documentation guide, terminology in
+                the glossary, and process details in their source documents.
+                Keep reported practices marked as drafts until the process owner
+                and approver review them.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-3">
+                <a
+                  href="../../documentation/index.html?doc=docs/table_of_content.md"
+                  class="inline-flex min-h-11 items-center gap-2 font-semibold text-blue-700 underline decoration-blue-300 underline-offset-4 hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+                >
+                  Open documentation contents
+                </a>
+                <a
+                  href="../../documentation/index.html?doc=docs/README.md"
+                  class="inline-flex min-h-11 items-center gap-2 font-semibold text-blue-700 underline decoration-blue-300 underline-offset-4 hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+                >
+                  Open documentation rules
+                </a>
+              </div>
+            </section>
+          </div>
         </div>
       </main>
       <aside class="hidden lg:block">
@@ -175,7 +270,7 @@
         &copy; <span id="footer-year">2026</span> PAP SOP Manual
       </p>
     </footer>
-      <a
+    <a
       href="#top"
       aria-label="Back to top"
       data-back-to-top

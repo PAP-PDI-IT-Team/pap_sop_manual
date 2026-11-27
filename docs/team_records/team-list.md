@@ -1,7 +1,9 @@
 # List of Teams:
+
 ## Assessment Center Team:
 
 **Systems:**
+
 - AC Local: People Dynamics Site
 - AC JFP: Subsystem under People Dynamics Site
 - GoPick: GoPick Site
@@ -10,5 +12,8 @@
 
 ## DiskFlow Team:
 
-@cjmalabanan-tpg
-<!-- Pa fill naman nito thanks -->
+**Contact:** @cjmalabanan-tpg
+
+Team responsibilities, supported systems, service scope, and request routing
+have not yet been documented. Confirm these details with the team before
+publishing them.

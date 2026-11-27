@@ -16,46 +16,47 @@
       links: [
         {
           label: "Requests and ownership",
-          path: "pages/manual/requests-and-ownership/index.html",
+          path: "pages/glossary/requests-and-ownership/index.html",
           matchPathOnly: true,
         },
         {
           label: "Development and validation",
-          path: "pages/manual/development-and-validation/index.html",
+          path: "pages/glossary/development-and-validation/index.html",
           matchPathOnly: true,
         },
         {
           label: "Information and documentation",
-          path: "pages/manual/information-and-documentation/index.html",
+          path: "pages/glossary/information-and-documentation/index.html",
           matchPathOnly: true,
         },
         {
           label: "Documentation",
-          path: "pages/manual/documentation/index.html",
+          path: "pages/documentation/index.html",
+          documentPath: "docs/README.md",
         },
         {
           label: "Rules",
-          path: "pages/manual/rules/index.html",
+          path: "pages/documentation/rules/index.html",
           matchPathOnly: true,
         },
         {
           label: "Conventions",
-          path: "pages/manual/conventions/index.html",
+          path: "pages/documentation/conventions/index.html",
           matchPathOnly: true,
         },
         {
           label: "Redirections",
-          path: "pages/manual/redirections/index.html",
+          path: "pages/documentation/redirections/index.html",
           matchPathOnly: true,
         },
         {
           label: "Glossary",
-          path: "pages/manual/glossary/index.html",
+          path: "pages/glossary/index.html",
           matchPathOnly: true,
         },
         {
           label: "Structure",
-          path: "pages/manual/structure/index.html",
+          path: "pages/structure/index.html",
           matchPathOnly: true,
         },
       ],
@@ -154,14 +155,23 @@
 
   window.siteScripts = window.siteScripts || {};
 
-  const resolveLinkUrl = (path) => {
+  const resolveLinkUrl = (path, documentPath) => {
     const [filePath, fragment] = path.split("#", 2);
+
+    if (documentPath) {
+      const documentationUrl = new URL(path, rootUrl);
+      documentationUrl.search = new URLSearchParams({
+        doc: documentPath,
+      }).toString();
+
+      return documentationUrl;
+    }
 
     if (filePath.endsWith(".md")) {
       const query = new URLSearchParams({ doc: filePath });
 
       const documentationUrl = new URL(
-        `pages/manual/documentation/index.html?${query.toString()}`,
+        `pages/documentation/index.html?${query.toString()}`,
         rootUrl,
       );
 
@@ -181,7 +191,7 @@
       ...(group.sections || []).flatMap((section) => section.links),
     ].map((link) => ({
       label: link.label,
-      url: resolveLinkUrl(link.path).href,
+      url: resolveLinkUrl(link.path, link.documentPath).href,
     })),
   );
 
@@ -202,7 +212,7 @@
 
   const buildLinkItem = (link, isDesktop = false) => {
     const listItem = document.createElement("li");
-    const linkUrl = resolveLinkUrl(link.path);
+    const linkUrl = resolveLinkUrl(link.path, link.documentPath);
 
     const anchor = createElementWithClass(
       "a",

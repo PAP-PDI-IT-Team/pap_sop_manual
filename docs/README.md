@@ -14,14 +14,14 @@
 
 - Use lowercase, hyphen-separated names for new page folders and asset files.
 - Use `index.html` as each page folder's entry point.
-- Put reusable styles and scripts in the root `assets/` folders.
+- Put reusable site-wide styles, scripts, data, and images under `shared/`.
 - Keep page-specific styles and scripts under that page's `assets/` folder.
 - Use relative paths so the site can run from a local folder or a hosted subfolder.
 - Keep editable procedure sources and supporting references in `docs/`.
 - Keep process references in `docs/processes/` and unresolved questions under “Details to verify” in the owning document. Keep draft status until the procedure is validated and approved.
 - Treat `.github/` as repository collaboration configuration. GitHub recognizes these template locations when the repository is hosted there.
 
-For another page, copy the About page layout, update the relative asset paths and page title, and add navigation where appropriate.
+For a new SOP page, use [the SOP content template](sop-template.md) and the [template sample](../pages/content-template-sample/index.html) as layout references. Keep process details tied to their source document and mark unverified information clearly.
 
 ## Redirections
 

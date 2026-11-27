@@ -30,7 +30,6 @@
 
     <!-- Markdown renderer must load before the TOC script -->
     <script src="../../../shared/scripts/on-this-page.js" defer></script>
-    <script src="" defer></script>
     <script src="../../../shared/scripts/back-to-top.js" defer></script>
   </head>
 
@@ -160,10 +159,27 @@
 
           <!-- Markdown content -->
           <article class="markdown-content min-w-0">
-            <p>
-              Confirm system applicability, formal responsibilities, and closure
-              criteria before relying on this reported sequence.
-            </p>
+            <h2>Questions to confirm</h2>
+            <ul>
+              <li>
+                Which systems and job-order types use the reported delivery
+                sequence?
+              </li>
+              <li>
+                What are the approved responsibilities and authority of the IT
+                developer, QA member, ASD evaluators, PR approver, and senior
+                merge owner?
+              </li>
+              <li>
+                What evidence shows that staging QA, preproduction evaluation,
+                and production checks have passed?
+              </li>
+              <li>
+                What conditions close a job order, and what delivery path
+                applies to client extraction, purging, renorming, or
+                decommissioning?
+              </li>
+            </ul>
           </article>
         </div>
       </main>
@@ -192,7 +208,7 @@
         &copy; <span id="footer-year">2026</span> PAP SOP Manual
       </p>
     </footer>
-      <a
+    <a
       href="#top"
       aria-label="Back to top"
       data-back-to-top

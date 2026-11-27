@@ -30,7 +30,6 @@
 
     <!-- Markdown renderer must load before the TOC script -->
     <script src="../../../shared/scripts/on-this-page.js" defer></script>
-    <script src="" defer></script>
     <script src="../../../shared/scripts/back-to-top.js" defer></script>
   </head>
 
@@ -169,8 +168,8 @@
                 Use <code>index.html</code> as each page folder's entry point.
               </li>
               <li>
-                Put reusable styles and scripts in the root
-                <code>assets/</code> folders.
+                Put reusable site-wide styles, scripts, data, and images under
+                <code>shared/</code>.
               </li>
               <li>
                 Keep page-specific styles and scripts under that page's
@@ -186,7 +185,7 @@
               </li>
               <li>
                 Keep process references in <code>docs/processes/</code> and
-                unresolved questions under â€œDetails to verifyâ€ in the owning
+                unresolved questions under “Details to verify” in the owning
                 document. Keep draft status until the procedure is validated and
                 approved.
               </li>
@@ -197,8 +196,14 @@
               </li>
             </ul>
             <p>
-              For another page, copy the About page layout, update the relative
-              asset paths and page title, and add navigation where appropriate.
+              For a new SOP page, use the
+              <a href="../../../docs/sop-template.md">SOP content template</a>
+              and the
+              <a href="../../content-template-sample/index.html"
+                >template sample</a
+              >
+              as layout references. Keep process details tied to their source
+              document and mark unverified information clearly.
             </p>
           </article>
         </div>
@@ -228,7 +233,7 @@
         &copy; <span id="footer-year">2026</span> PAP SOP Manual
       </p>
     </footer>
-      <a
+    <a
       href="#top"
       aria-label="Back to top"
       data-back-to-top

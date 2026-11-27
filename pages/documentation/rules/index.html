@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +9,7 @@
       content="PAP SOP Manual documentation and reference materials."
     />
 
-    <title>Structure | PAP SOP Manual</title>
+    <title>Rules | PAP SOP Manual</title>
 
     <link
       rel="stylesheet"
@@ -30,7 +30,6 @@
 
     <!-- Markdown renderer must load before the TOC script -->
     <script src="../../../shared/scripts/on-this-page.js" defer></script>
-    <script src="" defer></script>
     <script src="../../../shared/scripts/back-to-top.js" defer></script>
   </head>
 
@@ -121,7 +120,7 @@
 
             <span class="mx-2">/</span>
 
-            <span id="document-breadcrumb">Structure</span>
+            <span id="document-breadcrumb">Rules</span>
           </div>
 
           <!-- Document information -->
@@ -136,7 +135,7 @@
               id="document-title"
               class="text-3xl font-bold tracking-tight text-slate-900"
             >
-              Structure
+              Rules
             </h1>
 
             <p
@@ -160,40 +159,61 @@
 
           <!-- Markdown content -->
           <article class="markdown-content min-w-0">
-            <p>
-              Every clickable left-sidebar entry has its own
-              <code>index.html</code> page folder under the matching navigation
-              group. When a page summarizes a Markdown source, keep its HTML
-              content synchronized with that source.
-            </p>
-            <pre><code class="language-text">pages/
-├── manual/
-│   ├── requests-and-ownership/
-│   ├── development-and-validation/
-│   ├── information-and-documentation/
-│   ├── documentation/
-│   ├── rules/
-│   ├── conventions/
-│   ├── redirections/
-│   ├── glossary/
-│   └── structure/
-├── implementation-workflow/
-│   ├── workflow/
-│   ├── delivery-steps/
-│   ├── delivery-responsibilities/
-│   ├── details-to-verify/
-│   └── other-request-types/
-├── job-order-creation/
-│   ├── preparation-and-handover/
-│   └── details-to-verify/
-├── version-control-practice/
-│   ├── branch-flow/
-│   ├── working-with-changes/
-│   └── details-to-verify/
-└── list-of-teams/
-    ├── assessment-center-team/
-    └── diskflow-team/
-</code></pre>
+            <ul>
+              <li>
+                Write for the role using the document. Keep entry pages brief;
+                place necessary detail in the owning topic.
+              </li>
+              <li>
+                Centralize document titles and subtitles in the
+                <a
+                  href="../index.html?doc=docs%2Ftable_of_content.md"
+                  >table of contents</a
+                >. Link to its relevant section instead of maintaining duplicate
+                document lists (<a
+                  href="../index.html?doc=docs%2Fglossary.md#28-dry"
+                  >DRY [28]</a
+                >).
+              </li>
+              <li>
+                Centralize jargon definitions in the
+                <a href="../index.html?doc=docs%2Fglossary.md"
+                  >glossary</a
+                >, grouped by concern. Give each entry a stable number; link the
+                first prose use of a term in each document to its numbered
+                entry, for example
+                <a
+                  href="../index.html?doc=docs%2Fglossary.md#1-jo"
+                  >JO [1]</a
+                >. Do not repeat definitions across documents (DRY).
+              </li>
+              <li>
+                Keep rules and redirections here, directory layout in
+                <a href="../index.html?doc=docs%2Fstructure.md"
+                  >structure</a
+                >, navigation in the table of contents, terminology in the
+                glossary, and operational details in their owning topics (<a
+                  href="../index.html?doc=docs%2Fglossary.md#29-soc"
+                  >SoC [29]</a
+                >).
+              </li>
+              <li>
+                Add Mermaid diagrams when documenting flows and handoffs. Prefer
+                <code>flowchart TD</code> so readers follow the sequence from
+                top to bottom. Preserve unknown branches and evidence
+                qualifications.
+              </li>
+              <li>
+                Keep draft and discovery status visible. Reported practice is
+                not an approved operating procedure.
+              </li>
+              <li>
+                Follow the
+                <a href="../../../SOP.md">documentation maintenance SOP</a> for
+                review. Assign a process owner and approver before adopting a
+                procedure; check any corresponding HTML summary for consistency.
+              </li>
+            </ul>
           </article>
         </div>
       </main>

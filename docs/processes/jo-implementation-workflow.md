@@ -60,4 +60,7 @@ The delivery path for client extraction, [purging [11]](../glossary.md#11-purgin
 
 ## Details to verify
 
-Confirm system applicability, formal responsibilities, and closure criteria before relying on this reported sequence.
+- Which systems and job-order types use the reported delivery sequence.
+- Approved responsibilities and authority for the IT developer, QA member, ASD evaluators, PR approver, and senior merge owner.
+- Evidence required to show that staging QA, preproduction evaluation, and production checks have passed.
+- Conditions for closing a job order and the delivery path for client extraction, purging, renorming, or decommissioning.

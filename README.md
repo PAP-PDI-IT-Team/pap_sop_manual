@@ -40,9 +40,9 @@ Process owners must approve operational content. Interns should use sanitized ex
 
 ## Documentation
 
-- [Requests and ownership](pages/manual/requests-and-ownership/index.html)
-- [Development and validation](pages/manual/development-and-validation/index.html)
-- [Information and documentation](pages/manual/information-and-documentation/index.html)
+- [Requests and ownership](pages/glossary/requests-and-ownership/index.html)
+- [Development and validation](pages/glossary/development-and-validation/index.html)
+- [Information and documentation](pages/glossary/information-and-documentation/index.html)
 - [Documentation index](docs/README.md)
 - [Draft AC Local workflow](docs/ac-local-deployment.md)
 - [Reusable procedure template](docs/sop-template.md)

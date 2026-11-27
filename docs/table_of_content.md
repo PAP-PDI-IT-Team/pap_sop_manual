@@ -12,12 +12,12 @@
 
 - [Structure](structure.md)
 
-- [Implementation Workflow](processes/implementation-workflow.md)
-  - [Workflow](processes/implementation-workflow.md#workflow)
-  - [Delivery steps](processes/implementation-workflow.md#delivery-steps)
-  - [Delivery responsibilities](processes/implementation-workflow.md#delivery-responsibilities)
-  - [Details to verify](processes/implementation-workflow.md#details-to-verify)
-  - [Other request types](processes/implementation-workflow.md#other-request-types)
+- [Implementation Workflow](processes/jo-implementation-workflow.md)
+  - [Workflow](processes/jo-implementation-workflow.md#workflow)
+  - [Delivery steps](processes/jo-implementation-workflow.md#delivery-steps)
+  - [Delivery responsibilities](processes/jo-implementation-workflow.md#delivery-responsibilities)
+  - [Details to verify](processes/jo-implementation-workflow.md#details-to-verify)
+  - [Other request types](processes/jo-implementation-workflow.md#other-request-types)
 
 - [Job Order Creation](processes/job-order-creation.md)
   - [Preparation and handover](processes/job-order-creation.md#preparation-and-handover)
