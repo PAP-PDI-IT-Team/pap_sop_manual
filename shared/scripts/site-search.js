@@ -53,9 +53,17 @@
     siteHeader.append(triggerContainer);
   }
 
+  const searchBackdrop = createElement(
+    "div",
+    "fixed inset-x-0 bottom-0 z-30 bg-slate-950/40 backdrop-blur-sm",
+  );
+  searchBackdrop.hidden = true;
+  searchBackdrop.setAttribute("aria-hidden", "true");
+  document.body.append(searchBackdrop);
+
   const dialog = createElement(
     "dialog",
-    "fixed left-1/2 top-24 m-0 max-h-[80vh] w-[calc(100%-2rem)] max-w-[60rem] -translate-x-1/2 overflow-hidden rounded-xl border-0 bg-white p-5 text-slate-900 shadow-2xl backdrop:bg-slate-950/40 backdrop:backdrop-blur-sm",
+    "fixed left-1/2 top-24 m-0 max-h-[80vh] w-[calc(100%-2rem)] max-w-[60rem] -translate-x-1/2 overflow-hidden rounded-xl border-0 bg-white p-5 text-slate-900 shadow-2xl backdrop:bg-transparent backdrop:backdrop-blur-none",
   );
   dialog.setAttribute("aria-labelledby", "site-search-title");
 
@@ -137,7 +145,9 @@
 
   const openSearch = () => {
     if (!dialog.open) {
+      updateSearchBackdropPosition();
       dialog.showModal();
+      searchBackdrop.hidden = false;
     }
     input.value = "";
     renderResults("");
@@ -151,8 +161,20 @@
     }
   };
 
+  const updateSearchBackdropPosition = () => {
+    const headerBottom = siteHeader.getBoundingClientRect().bottom;
+    searchBackdrop.style.top = `${Math.max(0, headerBottom)}px`;
+  };
+
+  const handleSearchViewportResize = () => {
+    if (dialog.open) {
+      updateSearchBackdropPosition();
+    }
+  };
+
   trigger.addEventListener("click", openSearch);
   closeButton.addEventListener("click", closeSearch);
+  window.addEventListener("resize", handleSearchViewportResize);
 
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) {
@@ -161,6 +183,7 @@
   });
 
   dialog.addEventListener("close", () => {
+    searchBackdrop.hidden = true;
     trigger.focus();
   });
 

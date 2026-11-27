@@ -16,6 +16,7 @@ Record meaningful changes here. Date released versions when they are approved.
 
 - Applied consistent sidebar scrolling behavior to Glossary, Requests and Ownership, Development and Validation, and Information and Documentation.
 - Added a shared Back to top link on all documentation pages, positioned above the mobile navigation control and revealed after scrolling down.
+- Kept the header visible and sharp while blurring page content behind the shared search dialog.
 
 ## [1.0.9]
 
@@ -54,8 +55,6 @@ Record meaningful changes here. Date released versions when they are approved.
 - Show the mobile menu button and drawer below the large breakpoint, where the sidebar takes over.
 - Added the mobile navigation to the Content Template Sample page.
 - Moved the drawer slide, backdrop fade, and section scroll offset into Tailwind classes.
-
-## [1.0.5]
 
 ## [1.0.6]
 
