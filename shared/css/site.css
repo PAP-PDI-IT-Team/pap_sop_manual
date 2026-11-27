@@ -1,3 +1,7 @@
+html {
+  scrollbar-gutter: stable;
+}
+
 .interactive-card {
   position: relative;
   isolation: isolate;
@@ -70,5 +74,92 @@
   .interactive-card:hover .feature-icon,
   .interactive-card:hover .contributor-avatar {
     transform: none;
+  }
+}
+
+/* ========================================
+   DOCUMENTATION-STYLE DESKTOP SIDEBAR
+======================================== */
+
+@media (min-width: 1024px) {
+  .site-sidebar {
+    min-height: calc(100vh - 5rem);
+    padding: 1.5rem 1rem;
+    background: #ffffff;
+  }
+
+  .site-nav-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sidebar-nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .sidebar-section-heading,
+  .sidebar-subsection-heading {
+    margin: 0;
+    padding: 0 0.6rem;
+    color: #64748b;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .sidebar-link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0.55rem 0.65rem;
+    border-radius: 0.4rem;
+    color: #334155;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    text-decoration: none;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease;
+  }
+
+  .sidebar-link:hover {
+    background: #f1f5f9;
+    color: #1d4ed8;
+  }
+
+  .sidebar-link.is-active {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 600;
+  }
+
+  .sidebar-subsection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+  }
+
+  .sidebar-link:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-link {
+    transition: none;
   }
 }

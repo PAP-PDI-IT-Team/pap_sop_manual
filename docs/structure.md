@@ -1,31 +1,33 @@
 # Structure
 
+Every clickable left-sidebar entry has its own `index.html` page folder under the matching navigation group. When a page summarizes a Markdown source, keep its HTML content synchronized with that source.
+
 ```text
-it_sop_manual/
-├── .github/
-│   └── ISSUE_TEMPLATE/
-├── assets/
-│   ├── styles/
-│   └── script/
-├── docs/
-│   ├── README.md
-│   ├── table_of_content.md
-│   ├── glossary.md
-│   ├── structure.md
-│   ├── onboarding/
-│   ├── processes/
-│   ├── systems/
-│   └── team_records/
-└── pages/
-    ├── about/
-    │   ├── index.html
-    │   └── assets/
-    │       ├── styles/
-    │       └── script/
-    ├── requests-ownership/
-    │   └── index.html
-    ├── development-validation/
-    │   └── index.html
-    └── information-documentation/
-        └── index.html
+pages/
+├── manual/
+│   ├── requests-and-ownership/
+│   ├── development-and-validation/
+│   ├── information-and-documentation/
+│   ├── documentation/
+│   ├── rules/
+│   ├── conventions/
+│   ├── redirections/
+│   ├── glossary/
+│   └── structure/
+├── implementation-workflow/
+│   ├── workflow/
+│   ├── delivery-steps/
+│   ├── delivery-responsibilities/
+│   ├── details-to-verify/
+│   └── other-request-types/
+├── job-order-creation/
+│   ├── preparation-and-handover/
+│   └── details-to-verify/
+├── version-control-practice/
+│   ├── branch-flow/
+│   ├── working-with-changes/
+│   └── details-to-verify/
+└── list-of-teams/
+    ├── assessment-center-team/
+    └── diskflow-team/
 ```

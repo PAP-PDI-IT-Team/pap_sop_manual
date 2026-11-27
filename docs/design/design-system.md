@@ -26,8 +26,8 @@ utilities and does not need to work offline.
   blue and cyan palette.
 - Keep manual-page copy and previous/next controls compact, keyboard
   accessible, and aligned with the page title.
-- Keep the left navigation focused on the manual's top-level pages. Keep the
-  dynamic page TOC on the right for detailed, page-specific heading links.
+- Give every clickable left-sidebar entry its own page. Keep the dynamic page
+  TOC on the right for headings within that page.
 
 ## External resources
 

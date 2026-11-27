@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="PAP SOP Manual documentation and reference materials."
+    />
+
+    <title>Working with changes | PAP SOP Manual</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+
+    <link rel="stylesheet" href="../../../shared/css/site.css" />
+    <link rel="stylesheet" href="../../../shared/css/markdown-content.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Shared website components -->
+    <script src="../../../shared/scripts/site-nav.js" defer></script>
+    <script src="../../../shared/scripts/site-search.js" defer></script>
+    <script src="../../../shared/scripts/mobile-nav.js" defer></script>
+    <script src="../../../shared/scripts/site-footer.js" defer></script>
+    <script src="../../../shared/scripts/site-header.js" defer></script>
+
+    <!-- Markdown renderer must load before the TOC script -->
+    <script src="../../../shared/scripts/on-this-page.js" defer></script>
+    <script src="" defer></script>
+    <script src="../../../shared/scripts/back-to-top.js" defer></script>
+  </head>
+
+  <body id="top" class="min-h-screen bg-white text-slate-900 antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-slate-200 bg-white">
+      <div
+        class="site-header mx-auto flex h-16 max-w-[1600px] items-center justify-between px-5"
+      >
+        <a
+          href="../../../index.html"
+          class="text-lg font-bold tracking-tight text-slate-900"
+        >
+          PAP SOP Manual
+        </a>
+
+        <nav class="hidden items-center gap-6 text-sm font-medium md:flex">
+          <a
+            href="../../../index.html"
+            class="text-slate-600 hover:text-blue-700"
+          >
+            Home
+          </a>
+        </nav>
+
+        <button
+          id="navigation-toggle"
+          type="button"
+          class="rounded-lg p-2 text-slate-700 hover:bg-slate-100 md:hidden"
+          aria-label="Open navigation"
+          aria-controls="navigation-sheet"
+          aria-expanded="false"
+        >
+          <i class="bx bx-menu text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile navigation -->
+    <dialog
+      id="navigation-sheet"
+      class="fixed inset-y-0 left-0 m-0 h-full max-h-none w-80 max-w-[85vw] border-r border-slate-200 bg-white p-5 backdrop:bg-slate-950/40"
+    >
+      <div class="mb-6 flex items-center justify-between">
+        <span class="font-semibold text-slate-900">Navigation</span>
+
+        <button
+          id="navigation-close-button"
+          type="button"
+          class="rounded-lg p-2 text-slate-600 hover:bg-slate-100"
+          aria-label="Close navigation"
+        >
+          <i class="bx bx-x text-2xl"></i>
+        </button>
+      </div>
+
+      <nav
+        aria-label="Mobile site sections"
+        data-site-nav
+        class="flex flex-col gap-6"
+      ></nav>
+    </dialog>
+
+    <!-- Main layout -->
+    <div
+      class="mx-auto grid max-w-[90rem] grid-cols-1 gap-x-8 px-6 lg:grid-cols-[14rem_minmax(0,1fr)_12rem]"
+    >
+      <!-- Left sidebar -->
+      <aside class="hidden lg:block">
+        <div
+          class="scrollbar-hidden sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto overscroll-contain py-6 pr-3"
+          tabindex="0"
+        >
+          <nav
+            aria-label="Site sections"
+            data-site-nav
+            class="flex flex-col gap-6"
+          ></nav>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main id="main" class="min-w-0 py-8">
+        <div class="max-w-4xl">
+          <!-- Breadcrumb -->
+          <div class="mb-6 text-sm text-slate-500">
+            <a href="../../../index.html" class="hover:text-blue-700"> Home </a>
+
+            <span class="mx-2">/</span>
+
+            <span id="document-breadcrumb">Working with changes</span>
+          </div>
+
+          <!-- Document information -->
+          <div class="mb-8">
+            <p
+              class="mb-2 text-sm font-semibold uppercase tracking-wider text-blue-700"
+            >
+              PAP SOP Manual
+            </p>
+
+            <h1
+              id="document-title"
+              class="text-3xl font-bold tracking-tight text-slate-900"
+            >
+              Working with changes
+            </h1>
+
+            <p
+              id="document-description"
+              class="mt-3 text-base leading-7 text-slate-600"
+            >
+              Reported process information shown in the SOP layout; unverified
+              details remain marked.
+            </p>
+          </div>
+
+          <!-- Mobile table of contents -->
+          <details
+            class="mb-8 rounded-xl border border-slate-200 bg-white p-4 lg:hidden"
+          >
+            <summary class="cursor-pointer font-semibold text-slate-800">
+              On this page
+            </summary>
+
+            <nav data-toc aria-label="On this page" class="mt-4"></nav>
+          </details>
+
+          <!-- Markdown content -->
+          <section class="mt-8 space-y-10" aria-label="SOP content template">
+            <section aria-labelledby="template-document-details" class="mb-10">
+              <h2
+                id="template-document-details"
+                class="text-xl font-semibold text-slate-900"
+              >
+                Document details
+              </h2>
+              <dl class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <dt class="text-sm font-medium text-slate-500">
+                    Document ID
+                  </dt>
+                  <dd class="mt-1 font-semibold text-slate-900">
+                    [Assign document ID]
+                  </dd>
+                </div>
+                <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <dt class="text-sm font-medium text-slate-500">Version</dt>
+                  <dd class="mt-1 font-semibold text-slate-900">
+                    [Set version]
+                  </dd>
+                </div>
+                <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <dt class="text-sm font-medium text-slate-500">Status</dt>
+                  <dd class="mt-1 font-semibold text-slate-900">
+                    Reported practice; not an approved operating instruction.
+                  </dd>
+                </div>
+                <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+                  <dt class="text-sm font-medium text-slate-500">
+                    Process owner
+                  </dt>
+                  <dd class="mt-1 font-semibold text-slate-900">
+                    [Confirm department / role]
+                  </dd>
+                </div>
+              </dl>
+            </section>
+            <section aria-labelledby="template-departments" class="mb-10">
+              <h2
+                id="template-departments"
+                class="text-xl font-semibold text-slate-900"
+              >
+                Departments involved
+              </h2>
+              <dl class="mt-4 grid gap-4 md:grid-cols-2">
+                <div class="rounded-lg border border-slate-200 p-4">
+                  <dt class="text-sm font-semibold text-slate-700">
+                    Lead department
+                  </dt>
+                  <dd class="mt-2 text-slate-600">
+                    Department and process owner need confirmation.
+                  </dd>
+                </div>
+                <div class="rounded-lg border border-slate-200 p-4">
+                  <dt class="text-sm font-semibold text-slate-700">
+                    Supporting departments
+                  </dt>
+                  <dd class="mt-2 text-slate-600">
+                    Reported roles include IT development, QA, ASD, an
+                    authorized approver, and a senior merge owner.
+                  </dd>
+                </div>
+              </dl>
+            </section>
+            <section aria-labelledby="template-process-diagram" class="mb-10">
+              <p
+                class="text-sm font-semibold uppercase tracking-wider text-blue-700"
+              >
+                01 / Process overview
+              </p>
+              <h2
+                id="template-process-diagram"
+                class="mt-1 text-xl font-semibold text-slate-900"
+              >
+                Step-by-step process diagram
+              </h2>
+              <figure
+                class="mt-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4 sm:p-6"
+              >
+                <ol
+                  aria-label="Reported process overview"
+                  class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4"
+                >
+                  <li class="rounded-lg border border-slate-200 bg-white p-4">
+                    <span
+                      class="inline-flex size-8 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-800"
+                      >01</span
+                    >
+                    <p class="mt-3 font-semibold text-slate-900">Development</p>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Implement and test changes through dev and staging.
+                    </p>
+                  </li>
+                  <li class="rounded-lg border border-slate-200 bg-white p-4">
+                    <span
+                      class="inline-flex size-8 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-800"
+                      >02</span
+                    >
+                    <p class="mt-3 font-semibold text-slate-900">
+                      Change selection
+                    </p>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Select tested code for the pre-release branch.
+                    </p>
+                  </li>
+                  <li class="rounded-lg border border-slate-200 bg-white p-4">
+                    <span
+                      class="inline-flex size-8 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-800"
+                      >03</span
+                    >
+                    <p class="mt-3 font-semibold text-slate-900">
+                      Preproduction
+                    </p>
+                    <p class="mt-1 text-sm text-slate-600">
+                      Propose selected changes to preprod by pull request.
+                    </p>
+                  </li>
+                  <li class="rounded-lg border border-slate-200 bg-white p-4">
+                    <span
+                      class="inline-flex size-8 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-800"
+                      >04</span
+                    >
+                    <p class="mt-3 font-semibold text-slate-900">Production</p>
+                    <p class="mt-1 text-sm text-slate-600">
+                      After reported ASD acceptance, approve, merge, and deploy
+                      to main.
+                    </p>
+                  </li>
+                </ol>
+                <figcaption class="mt-4 text-sm text-slate-500">
+                  Overview based on reported information. Confirm the flow with
+                  the process owner before approval.
+                </figcaption>
+              </figure>
+            </section>
+            <section aria-labelledby="template-process-steps" class="mb-10">
+              <p
+                class="text-sm font-semibold uppercase tracking-wider text-blue-700"
+              >
+                02 / Step reference
+              </p>
+              <h2
+                id="template-process-steps"
+                class="mt-1 text-xl font-semibold text-slate-900"
+              >
+                Process steps
+              </h2>
+              <p
+                id="template-process-description"
+                class="mt-2 leading-relaxed text-slate-600"
+              >
+                This is a concise template overview; consult the source details
+                below for reported notes and verification items.
+              </p>
+              <div
+                class="mt-4 overflow-x-auto rounded-lg border border-slate-200"
+              >
+                <table
+                  aria-describedby="template-process-description"
+                  class="min-w-[48rem] w-full border-collapse text-left text-sm"
+                >
+                  <thead class="bg-slate-100 text-slate-700">
+                    <tr>
+                      <th scope="col" class="px-4 py-3 font-semibold">Step</th>
+                      <th scope="col" class="px-4 py-3 font-semibold">
+                        Diagram reference
+                      </th>
+                      <th scope="col" class="px-4 py-3 font-semibold">
+                        Action or decision
+                      </th>
+                      <th scope="col" class="px-4 py-3 font-semibold">
+                        Responsible role / department
+                      </th>
+                      <th scope="col" class="px-4 py-3 font-semibold">
+                        Output or record
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200 text-slate-600">
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        01
+                      </th>
+                      <td class="px-4 py-3">Development</td>
+                      <td class="px-4 py-3">
+                        Branch from dev, implement the fix, merge by pull
+                        request, and test staging.
+                      </td>
+                      <td class="px-4 py-3">IT developer and QA (reported)</td>
+                      <td class="px-4 py-3">Staging test outcome</td>
+                    </tr>
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        02
+                      </th>
+                      <td class="px-4 py-3">Change selection</td>
+                      <td class="px-4 py-3">
+                        Manually copy or edit selected staging-tested lines into
+                        a pre-release branch from main.
+                      </td>
+                      <td class="px-4 py-3">IT (reported)</td>
+                      <td class="px-4 py-3">Selected pre-release changes</td>
+                    </tr>
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        03
+                      </th>
+                      <td class="px-4 py-3">Preproduction</td>
+                      <td class="px-4 py-3">
+                        Propose selected changes for preprod by pull request.
+                      </td>
+                      <td class="px-4 py-3">IT (reported)</td>
+                      <td class="px-4 py-3">
+                        Preprod deployment and evaluation
+                      </td>
+                    </tr>
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        04
+                      </th>
+                      <td class="px-4 py-3">Production</td>
+                      <td class="px-4 py-3">
+                        After ASD acceptance, target main; approval and merge
+                        roles need confirmation.
+                      </td>
+                      <td class="px-4 py-3">
+                        ASD and approver roles (reported)
+                      </td>
+                      <td class="px-4 py-3">
+                        Production deployment and live checks
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section aria-labelledby="template-glossary" class="mb-8">
+              <p
+                class="text-sm font-semibold uppercase tracking-wider text-blue-700"
+              >
+                03 / Terms
+              </p>
+              <h2
+                id="template-glossary"
+                class="mt-1 text-xl font-semibold text-slate-900"
+              >
+                Glossary
+              </h2>
+              <div
+                class="mt-4 overflow-x-auto rounded-lg border border-slate-200"
+              >
+                <table class="w-full border-collapse text-left text-sm">
+                  <thead class="bg-slate-100 text-slate-700">
+                    <tr>
+                      <th scope="col" class="px-4 py-3 font-semibold">Term</th>
+                      <th scope="col" class="px-4 py-3 font-semibold">
+                        Definition
+                      </th>
+                      <th scope="col" class="px-4 py-3 font-semibold">
+                        Related step
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200 text-slate-600">
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        <a
+                          class="text-blue-700 underline underline-offset-2"
+                          href="../../manual/glossary/index.html#17-dev"
+                          >Dev</a
+                        >
+                      </th>
+                      <td class="px-4 py-3">See the linked glossary entry.</td>
+                      <td class="px-4 py-3">01</td>
+                    </tr>
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        <a
+                          class="text-blue-700 underline underline-offset-2"
+                          href="../../manual/glossary/index.html#18-stg"
+                          >Staging</a
+                        >
+                      </th>
+                      <td class="px-4 py-3">See the linked glossary entry.</td>
+                      <td class="px-4 py-3">01, 02</td>
+                    </tr>
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        <a
+                          class="text-blue-700 underline underline-offset-2"
+                          href="../../manual/glossary/index.html#20-pre-release"
+                          >Pre-release</a
+                        >
+                      </th>
+                      <td class="px-4 py-3">See the linked glossary entry.</td>
+                      <td class="px-4 py-3">02</td>
+                    </tr>
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        <a
+                          class="text-blue-700 underline underline-offset-2"
+                          href="../../manual/glossary/index.html#19-preprod"
+                          >Preprod</a
+                        >
+                      </th>
+                      <td class="px-4 py-3">See the linked glossary entry.</td>
+                      <td class="px-4 py-3">03</td>
+                    </tr>
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        <a
+                          class="text-blue-700 underline underline-offset-2"
+                          href="../../manual/glossary/index.html#6-asd"
+                          >ASD</a
+                        >
+                      </th>
+                      <td class="px-4 py-3">See the linked glossary entry.</td>
+                      <td class="px-4 py-3">04</td>
+                    </tr>
+                    <tr>
+                      <th
+                        scope="row"
+                        class="px-4 py-3 font-semibold text-slate-900"
+                      >
+                        <a
+                          class="text-blue-700 underline underline-offset-2"
+                          href="../../manual/glossary/index.html#14-pr"
+                          >PR</a
+                        >
+                      </th>
+                      <td class="px-4 py-3">See the linked glossary entry.</td>
+                      <td class="px-4 py-3">01, 03, 04</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <h2
+              class="border-t border-slate-200 pt-8 text-xl font-semibold text-slate-900"
+            >
+              Reported source details and review notes
+            </h2>
+          </section>
+          <article class="markdown-content min-w-0">
+            <table>
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>What happens</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Development</td>
+                  <td>
+                    Branch from
+                    <a
+                      href="../../manual/documentation/index.html?doc=docs%2Fglossary.md#17-dev"
+                      >Dev [17]</a
+                    >
+                    to implement the fix. Open a PR back to dev; after merge,
+                    test on the staging site deployed from dev. Issues return to
+                    the fix branch and through another PR to dev.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Change selection</td>
+                  <td>
+                    Create a
+                    <a
+                      href="../../manual/documentation/index.html?doc=docs%2Fglossary.md#20-pre-release"
+                      >pre-release [20]</a
+                    >
+                    branch from main. Manually copy/edit the selected,
+                    staging-tested code lines from dev into it.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Preproduction</td>
+                  <td>
+                    A
+                    <a
+                      href="../../manual/documentation/index.html?doc=docs%2Fglossary.md#14-pr"
+                      >PR [14]</a
+                    >
+                    proposes those changes for
+                    <a
+                      href="../../manual/documentation/index.html?doc=docs%2Fglossary.md#19-preprod"
+                      >preprod [19]</a
+                    >.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Production</td>
+                  <td>
+                    After
+                    <a
+                      href="../../manual/documentation/index.html?doc=docs%2Fglossary.md#6-asd"
+                      >ASD [6]</a
+                    >
+                    acceptance, a PR targets main. An authorized person
+                    approves, a senior merges, and deployment is automatic.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              For QA, huddles, live checks, and closure, see the
+              <a
+                href="../../manual/documentation/index.html?doc=docs%2Fprocesses%2Fjo-implementation-workflow.md"
+                >implementation workflow</a
+              >.
+            </p>
+          </article>
+        </div>
+      </main>
+
+      <!-- Right sidebar -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 py-8">
+          <h2 class="mb-4 text-sm font-semibold text-slate-900">
+            On this page
+          </h2>
+
+          <nav data-toc aria-label="On this page"></nav>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="bg-slate-950 px-6 py-6 text-slate-100 sm:px-8">
+      <div class="mx-auto max-w-6xl text-center">
+        <p class="text-lg font-semibold">PAP SOP Manual</p>
+        <p class="mt-1 text-sm text-slate-400">Build. Align. Deliver.</p>
+      </div>
+
+      <p class="mx-auto mt-5 max-w-6xl text-center text-sm text-slate-400">
+        &copy; <span id="footer-year">2026</span> PAP SOP Manual
+      </p>
+    </footer>
+      <a
+      href="#top"
+      aria-label="Back to top"
+      data-back-to-top
+      hidden
+      class="fixed bottom-24 right-6 z-30 inline-flex size-12 items-center justify-center rounded-full border border-blue-800 bg-blue-700 text-white shadow-lg transition hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 lg:bottom-6"
+    >
+      <i class="bx bx-up-arrow-alt text-2xl" aria-hidden="true"></i>
+    </a>
+  </body>
+</html>
