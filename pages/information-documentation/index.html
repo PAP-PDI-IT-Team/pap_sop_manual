@@ -21,6 +21,7 @@
     <script src="../../shared/scripts/site-header.js" defer></script>
     <script src="../../shared/scripts/page-actions.js" defer></script>
     <script src="../../shared/scripts/on-this-page.js" defer></script>
+    <script src="../../shared/scripts/back-to-top.js" defer></script>
   </head>
   <body id="top" class="min-h-screen bg-white text-slate-900 antialiased">
     <a
@@ -309,5 +310,14 @@
         &copy; <span id="footer-year">2026</span> PAP SOP Manual
       </p>
     </footer>
+    <a
+      href="#top"
+      aria-label="Back to top"
+      data-back-to-top
+      hidden
+      class="fixed bottom-24 right-6 z-30 inline-flex size-12 items-center justify-center rounded-full border border-blue-800 bg-blue-700 text-white shadow-lg transition hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 lg:bottom-6"
+    >
+      <i class="bx bx-up-arrow-alt text-2xl" aria-hidden="true"></i>
+    </a>
   </body>
 </html>

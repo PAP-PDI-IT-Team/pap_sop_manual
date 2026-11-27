@@ -15,6 +15,7 @@ Record meaningful changes here. Date released versions when they are approved.
 ### Updated
 
 - Applied consistent sidebar scrolling behavior to Glossary, Requests and Ownership, Development and Validation, and Information and Documentation.
+- Added a shared Back to top link on all documentation pages, positioned above the mobile navigation control and revealed after scrolling down.
 
 ## [1.0.9]
 
