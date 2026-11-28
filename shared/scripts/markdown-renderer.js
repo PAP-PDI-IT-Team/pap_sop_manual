@@ -36,29 +36,56 @@
   const rootUrl = new URL("../../", document.currentScript.src);
   const documentUrl = new URL(documentPath, rootUrl);
 
-  const loadLibraries = () => {
-    if (window.marked && window.DOMPurify) {
-      return Promise.resolve();
+  
+  const loadLibraries = async () => {
+    const scripts = [];
+
+    if (!window.marked) {
+      scripts.push(
+        new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src =
+            "https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js";
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.append(script);
+        }),
+      );
     }
 
-    return Promise.all([
-      new Promise((resolve, reject) => {
-        const script = document.createElement("script");
-        script.src = "https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js";
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.append(script);
-      }),
-      new Promise((resolve, reject) => {
-        const script = document.createElement("script");
-        script.src =
-          "https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js";
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.append(script);
-      }),
-    ]);
+    if (!window.DOMPurify) {
+      scripts.push(
+        new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src =
+            "https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js";
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.append(script);
+        }),
+      );
+    }
+
+    await Promise.all(scripts);
+
+    const mermaidModule = await import(
+      "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs"
+    );
+
+    const mermaid = mermaidModule.default;
+
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: "strict",
+      theme: "default",
+      flowchart: {
+        htmlLabels: false,
+      },
+    });
+
+    return mermaid;
   };
+
 
   const updateRelativeLinks = (container) => {
     container.querySelectorAll("a[href], img[src]").forEach((element) => {
@@ -93,9 +120,47 @@
     });
   };
 
+
+  const renderMermaidDiagrams = async (container, mermaid) => {
+    const codeBlocks = container.querySelectorAll(
+      "pre > code.language-mermaid",
+    );
+
+    codeBlocks.forEach((code) => {
+      const pre = code.parentElement;
+
+      pre.className = "mermaid";
+      pre.textContent = code.textContent;
+    });
+
+    const diagrams = container.querySelectorAll("pre.mermaid");
+
+    for (const diagram of diagrams) {
+      try {
+        await mermaid.parse(diagram.textContent);
+
+        await mermaid.run({
+          nodes: [diagram],
+        });
+      } catch (error) {
+        console.error("Mermaid diagram rendering failed:", error);
+
+        const warning = document.createElement("p");
+        warning.className =
+          "my-3 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800";
+        warning.textContent =
+          "This diagram could not be rendered. Please check its Mermaid syntax.";
+
+        diagram.before(warning);
+        diagram.classList.add("mermaid-source");
+      }
+    }
+  };
+
+
   const loadDocument = async () => {
     try {
-      await loadLibraries();
+      const mermaid = await loadLibraries();
 
       const response = await fetch(documentUrl);
 
@@ -115,6 +180,8 @@
       contentElement.innerHTML = DOMPurify.sanitize(renderedHtml);
 
       updateRelativeLinks(contentElement);
+
+      await renderMermaidDiagrams(contentElement, mermaid);
 
       const firstHeading = contentElement.querySelector("h1");
       const title =

@@ -20,12 +20,17 @@ Template preview only. Replace bracketed prompts with process-owner-approved inf
 
 [Insert the approved process diagram here. Keep its step numbers aligned with the table below.]
 
-Use these placeholders to plan the diagram structure:
+The following diagram illustrates the expected structure:
 
-1. **[Trigger or start]** — [Add the entry condition]
-2. **[Process step]** — [Add the next action]
-3. **[Decision or handoff]** — [Show branches or ownership change]
-4. **[Outcome or end]** — [Add the completion condition]
+```mermaid
+flowchart TD
+    A([01. Trigger or start]) --> B[02. Process step]
+    B --> C{03. Decision or handoff}
+    C -->|Approved / completed| D([04. Outcome or end])
+    C -->|Needs revision| B
+```
+
+Replace this example with the approved process flow before publication.
 
 ## Process steps
 
