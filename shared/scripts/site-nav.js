@@ -21,11 +21,6 @@
           matchPathOnly: true,
         },
         {
-          label: "SOP Template",
-          path: "pages/sop-template/index.html",
-          documentPath: "docs/sop-template.md",
-        },
-        {
           label: "Glossary",
           path: "pages/glossary/index.html",
           matchPathOnly: true,
@@ -54,6 +49,16 @@
           label: "List of Teams:",
           path: "pages/list-of-teams/index.html",
           matchPathOnly: true,
+        },
+      ],
+    },
+    {
+      title: "Draft",
+      links: [
+        {
+          label: "SOP Template",
+          path: "pages/sop-template/index.html",
+          documentPath: "docs/sop-template.md",
         },
       ],
     },
